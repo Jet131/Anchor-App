@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Anchor</title>
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIj4KICA8ZGVmcz4KICAgIDxyYWRpYWxHcmFkaWVudCBpZD0iZ2xvdyIgY3g9IjUwJSIgY3k9IjQyJSIgcj0iNjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Q0YWY2YSIgc3RvcC1vcGFjaXR5PSIwLjM1Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Q0YWY2YSIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8L3JhZGlhbEdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgcng9IjQyIiBmaWxsPSIjMGQwZDBmIi8+CiAgPGNpcmNsZSBjeD0iOTYiIGN5PSI5MCIgcj0iNzYiIGZpbGw9InVybCgjZ2xvdykiLz4KICA8cmVjdCB4PSI3IiB5PSI3IiB3aWR0aD0iMTc4IiBoZWlnaHQ9IjE3OCIgcng9IjM2IiBmaWxsPSJub25lIiBzdHJva2U9IiNiMDhkNTciIHN0cm9rZS1vcGFjaXR5PSIwLjQ1IiBzdHJva2Utd2lkdGg9IjIiLz4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzNiwyMikgc2NhbGUoMS4yKSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZDliODc4IiBzdHJva2Utd2lkdGg9IjkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+CiAgICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjE2IiByPSIxMi41IiAvPgogICAgPGxpbmUgeDE9IjUwIiB5MT0iMjgiIHgyPSI1MCIgeTI9IjkwIiAvPgogICAgPGxpbmUgeDE9IjI0IiB5MT0iNDQiIHgyPSI3NiIgeTI9IjQ0IiAvPgogICAgPHBhdGggZD0iTTUwIDg4IEMgMTggODggNCAxMDQgMTggMTEyIEMgMjggMTE4IDQyIDEwOCA0NiA5NiIgLz4KICAgIDxwYXRoIGQ9Ik01MCA4OCBDIDgyIDg4IDk2IDEwNCA4MiAxMTIgQyA3MiAxMTggNTggMTA4IDU0IDk2IiAvPgogIDwvZz4KPC9zdmc+Cg==">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIj4KICA8ZGVmcz4KICAgIDxyYWRpYWxHcmFkaWVudCBpZD0iZ2xvdyIgY3g9IjUwJSIgY3k9IjQyJSIgcj0iNjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Q0YWY2YSIgc3RvcC1vcGFjaXR5PSIwLjM1Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Q0YWY2YSIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8L3JhZGlhbEdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgcng9IjQyIiBmaWxsPSIjMGQwZDBmIi8+CiAgPGNpcmNsZSBjeD0iOTYiIGN5PSI5MCIgcj0iNzYiIGZpbGw9InVybCgjZ2xvdykiLz4KICA8cmVjdCB4PSI3IiB5PSI3IiB3aWR0aD0iMTc4IiBoZWlnaHQ9IjE3OCIgcng9IjM2IiBmaWxsPSJub25lIiBzdHJva2U9IiNiMDhkNTciIHN0cm9rZS1vcGFjaXR5PSIwLjQ1IiBzdHJva2Utd2lkdGg9IjIiLz4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzNiwyMikgc2NhbGUoMS4yKSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZDliODc4IiBzdHJva2Utd2lkdGg9IjkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+CiAgICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjE2IiByPSIxMi41IiAvPgogICAgPGxpbmUgeDE9IjUwIiB5MT0iMjgiIHgyPSI1MCIgeTI9IjkwIiAvPgogICAgPGxpbmUgeDE9IjI0IiB5MT0iNDQiIHgyPSI3NiIgeTI9IjQ0IiAvPgogICAgPHBhdGggZD0iTTUwIDg4IEMgMTggODggNCAxMDQgMTggMTEyIEMgMjggMTE4IDQyIDEwOCA0NiA5NiIgLz4KICAgIDxwYXRoIGQ9Ik01MCA4OCBDIDgyIDg4IDk2IDEwNCA4MiAxMTIgQyA3MiAxMTggNTggMTA4IDU0IDk2IiAvPgogIDwvZz4KPC9zdmc+Cg==">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+<style>
+:root {
+  --onyx: #0d0d0f;
+  --surface: #17171a;
+  --surface2: #1e1e22;
+  --line: #2d2c2a;
+  --line-gold: rgba(176,141,87,0.35);
+  --ivory: #ece6d9;
+  --ivory-dim: #a8a196;
+  --ivory-faint: #6f6a61;
+  --bronze: #b08d57;
+  --bronze-bright: #d4af6a;
+  --oxblood: #7a3b32;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; background: #050506; }
+body { font-family: 'Inter', sans-serif; color: var(--ivory); -webkit-font-smoothing: antialiased; }
+.serif { font-family: 'Cormorant Garamond', serif; }
+
+#root { display: flex; justify-content: center; min-height: 100vh; }
+.app {
+  width: 100%; max-width: 480px; min-height: 100vh; background: var(--onyx);
+  display: flex; flex-direction: column; position: relative;
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(176,141,87,0.05), transparent 55%),
+    radial-gradient(ellipse at 85% 100%, rgba(176,141,87,0.04), transparent 50%);
+}
+
+/* header */
+.header { padding: 26px 24px 6px; text-align: center; flex-shrink: 0; }
+.header-title { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 600; letter-spacing: 0.32em; text-transform: uppercase; color: var(--bronze); }
+.header-rule { width: 34px; height: 1px; background: var(--line-gold); margin: 10px auto 0; }
+.header-date { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ivory-faint); margin-top: 10px; font-weight: 600; }
+
+.content { flex: 1; overflow-y: auto; padding: 10px 22px 20px; }
+
+/* bottom nav */
+.bottom-nav { display: flex; background: var(--surface); border-top: 1px solid var(--line); flex-shrink: 0; padding: 4px 0 calc(4px + env(safe-area-inset-bottom, 0px)); }
+.nav-btn { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; background: none; border: none; color: var(--ivory-faint); font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; padding: 10px 0 8px; transition: color 0.2s; }
+.nav-btn.active { color: var(--bronze-bright); }
+.nav-icon { font-size: 16px; opacity: 0.9; }
+
+/* tablet card */
+.tablet-wrap { position: relative; margin: 10px 0 18px; }
+.tablet {
+  position: relative; border-radius: 3px; padding: 44px 26px 30px;
+  background:
+    radial-gradient(circle at 15% 8%, rgba(255,255,255,0.025), transparent 40%),
+    linear-gradient(155deg, #1b1a18, #131211 60%);
+  border: 1px solid var(--line-gold);
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.4), 0 24px 50px -20px rgba(0,0,0,0.7);
+  min-height: 280px; display: flex; flex-direction: column;
+  animation: tablet-in 0.5s cubic-bezier(.2,.8,.2,1);
+}
+@keyframes tablet-in { 0% { opacity: 0; transform: translateY(8px) scale(0.985); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+.tablet::before, .tablet::after {
+  content: ''; position: absolute; width: 13px; height: 13px; border: 1px solid var(--line-gold);
+}
+.tablet::before { top: 10px; left: 10px; border-right: none; border-bottom: none; }
+.tablet::after { bottom: 10px; right: 10px; border-left: none; border-top: none; }
+.tablet-quote-mark { font-family: 'Cormorant Garamond', serif; font-size: 46px; color: var(--bronze); opacity: 0.55; line-height: 0.5; height: 30px; }
+.tablet-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 25px; line-height: 1.44; color: var(--ivory); flex: 1; }
+.tablet-footer { display: flex; align-items: center; gap: 12px; margin-top: 26px; }
+.tablet-rule { flex: 1; height: 1px; background: var(--line-gold); }
+.tablet-author { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bronze); font-weight: 700; white-space: nowrap; }
+.tablet-cat { position: absolute; top: 16px; right: 20px; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ivory-faint); font-weight: 700; }
+
+@media (max-width: 360px) {
+  .content { padding: 10px 16px 20px; }
+  .tablet { padding: 38px 18px 24px; min-height: 250px; }
+  .tablet-quote { font-size: 21px; }
+  .tablet-cat { right: 16px; }
+  .action-btn { width: 42px; height: 42px; font-size: 15px; }
+  .action-btn.big { width: 48px; height: 48px; font-size: 17px; }
+}
+
+/* action row */
+.action-row { display: flex; justify-content: center; gap: 10px; margin-top: 16px; }
+.action-btn {
+  width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--line);
+  background: var(--surface); color: var(--ivory-dim); font-size: 16px; display: flex;
+  align-items: center; justify-content: center; cursor: pointer; transition: all 0.15s;
+}
+.action-btn:hover { border-color: var(--line-gold); color: var(--ivory); transform: translateY(-1px); }
+.action-btn.active { border-color: var(--bronze); color: var(--bronze-bright); background: rgba(176,141,87,0.1); }
+.action-btn.big { width: 54px; height: 54px; font-size: 19px; }
+
+.browse-row { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 4px; }
+.browse-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ivory-faint); font-weight: 700; }
+
+/* reflection */
+.reflect-wrap { margin-top: 16px; animation: bz-fade-in 0.25s ease; }
+@keyframes bz-fade-in { from { opacity: 0; } to { opacity: 1; } }
+.reflect-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bronze); font-weight: 700; margin-bottom: 8px; }
+.reflect-box {
+  width: 100%; min-height: 90px; background: var(--surface); border: 1px solid var(--line);
+  border-radius: 6px; padding: 14px; color: var(--ivory); font-family: 'Inter', sans-serif; font-size: 16px;
+  line-height: 1.6; resize: vertical; outline: none;
+}
+.reflect-box:focus { border-color: var(--line-gold); }
+.reflect-box::placeholder { color: var(--ivory-faint); }
+
+/* saved list */
+.saved-item { padding: 18px 0; border-bottom: 1px solid var(--line); }
+.saved-item:last-child { border-bottom: none; }
+.saved-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 18px; color: var(--ivory); line-height: 1.4; }
+.saved-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
+.saved-author { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bronze); font-weight: 700; }
+.saved-remove { background: none; border: none; color: var(--ivory-faint); font-size: 12px; cursor: pointer; }
+
+.empty { text-align: center; padding: 60px 20px; color: var(--ivory-faint); }
+.empty-glyph { font-family: 'Cormorant Garamond', serif; font-size: 32px; color: var(--bronze); opacity: 0.5; margin-bottom: 14px; }
+.empty-text { font-size: 13px; line-height: 1.7; }
+
+/* category filter */
+.chip-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+.chip { padding: 7px 13px; border-radius: 20px; border: 1px solid var(--line); font-size: 11px; font-weight: 700; letter-spacing: 0.03em; color: var(--ivory-dim); cursor: pointer; background: var(--surface); transition: all 0.15s; }
+.chip.active { border-color: var(--bronze); color: var(--bronze-bright); background: rgba(176,141,87,0.1); }
+
+/* section title */
+.section-title { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ivory-faint); font-weight: 700; margin-bottom: 14px; }
+
+/* settings */
+.settings-card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px; margin-bottom: 14px; }
+.settings-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; font-size: 13px; }
+.settings-label { color: var(--ivory-dim); }
+.settings-val { color: var(--bronze-bright); font-weight: 700; }
+.btn-outline { width: 100%; padding: 13px; border-radius: 8px; background: none; border: 1px solid rgba(122,59,50,0.4); color: #c97a6c; font-size: 12.5px; font-weight: 700; cursor: pointer; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { useState, useEffect, useMemo } = React;
+
+const QUOTES = [
+  { id: 1, text: "You have power over your mind, not outside events. See this clearly, and strength follows.", author: "Marcus Aurelius", cat: "Stoicism" },
+  { id: 2, text: "Discipline is choosing between what you want now and what you want most.", author: "Anchor", cat: "Discipline" },
+  { id: 3, text: "We suffer more in imagination than in reality.", author: "Seneca", cat: "Stoicism" },
+  { id: 4, text: "The obstacle in the path becomes the path. Never forget, within every obstacle is an opportunity to improve our condition.", author: "Marcus Aurelius", cat: "Stoicism" },
+  { id: 5, text: "Motivation is weather. Discipline is climate. Build the climate.", author: "Anchor", cat: "Discipline" },
+  { id: 6, text: "Man is disturbed not by things, but by the view he takes of them.", author: "Epictetus", cat: "Stoicism" },
+  { id: 7, text: "The pain you feel today will be the strength you feel tomorrow. There is no growth without friction.", author: "Anchor", cat: "Suffering & Growth" },
+  { id: 8, text: "First say to yourself what you would be, and then do what you have to do.", author: "Epictetus", cat: "Discipline" },
+  { id: 9, text: "Comfort is a slow leak. It empties a life quietly, one easy choice at a time.", author: "Anchor", cat: "Discipline" },
+  { id: 10, text: "He who fears he shall suffer, already suffers what he fears.", author: "Michel de Montaigne", cat: "Stoicism" },
+  { id: 11, text: "The last of human freedoms is to choose one's attitude in any given set of circumstances.", author: "Viktor Frankl", cat: "Willpower" },
+  { id: 12, text: "What stands in the way becomes the way.", author: "Marcus Aurelius", cat: "Stoicism" },
+  { id: 13, text: "Do not wait for the perfect moment. Take the moment and make it perfect.", author: "Anchor", cat: "Focus" },
+  { id: 14, text: "A gem cannot be polished without friction, nor a person perfected without trials.", author: "Confucius", cat: "Suffering & Growth" },
+  { id: 15, text: "Your future is built in the minutes you don't feel like it.", author: "Anchor", cat: "Discipline" },
+  { id: 16, text: "It is not that we have a short time to live, but that we waste a great deal of it.", author: "Seneca", cat: "Time" },
+  { id: 17, text: "The mind that is anxious about future events is miserable.", author: "Seneca", cat: "Focus" },
+  { id: 18, text: "Whether you think you can or think you can't, you're right.", author: "Henry Ford", cat: "Willpower" },
+  { id: 19, text: "Endurance is not the absence of struggle. It is the decision, made again each morning, to continue.", author: "Anchor", cat: "Willpower" },
+  { id: 20, text: "He who has a why to live can bear almost any how.", author: "Friedrich Nietzsche", cat: "Suffering & Growth" },
+  { id: 21, text: "Waste no more time arguing what a good man should be. Be one.", author: "Marcus Aurelius", cat: "Discipline" },
+  { id: 22, text: "Nothing is particularly hard if you divide it into small jobs.", author: "Henry Ford", cat: "Focus" },
+  { id: 23, text: "Between stimulus and response there is a space. In that space is our power to choose.", author: "Viktor Frankl", cat: "Willpower" },
+  { id: 24, text: "Every day you are not building the life you want, you are building the one you'll settle for.", author: "Anchor", cat: "Discipline" },
+  { id: 25, text: "He who is not everyday conquering some fear has not learned the secret of life.", author: "Ralph Waldo Emerson", cat: "Willpower" },
+  { id: 26, text: "Difficulties strengthen the mind, as labor does the body.", author: "Seneca", cat: "Suffering & Growth" },
+  { id: 27, text: "You will never do anything in this world without courage. It is the greatest quality of the mind next to honor.", author: "Aristotle", cat: "Willpower" },
+  { id: 28, text: "Small disciplines repeated with consistency every day lead to great achievements gained slowly over time.", author: "John C. Maxwell", cat: "Discipline" },
+  { id: 29, text: "The soul becomes dyed with the color of its thoughts.", author: "Marcus Aurelius", cat: "Focus" },
+  { id: 30, text: "One does not become enlightened by imagining figures of light, but by making the darkness conscious.", author: "Carl Jung", cat: "Suffering & Growth" },
+  { id: 31, text: "It's not the load that breaks you down, it's the way you carry it.", author: "Lou Holtz", cat: "Willpower" },
+  { id: 32, text: "Ask not what today owes you. Ask what you have earned today.", author: "Anchor", cat: "Discipline" },
+  { id: 33, text: "The impediment to action advances action. What stands in the way becomes the way.", author: "Marcus Aurelius", cat: "Stoicism" },
+  { id: 34, text: "A river cuts through rock not because of its power, but its persistence.", author: "James N. Watkins", cat: "Discipline" },
+  { id: 35, text: "You are not tired. You are undisciplined. Rest is earned, not defaulted to.", author: "Anchor", cat: "Willpower" },
+  { id: 36, text: "The best time to plant a tree was twenty years ago. The second best time is now.", author: "Chinese Proverb", cat: "Time" },
+
+  { id: 37, text: "Confine yourself to the present. It is the only thing a person can actually lose.", author: "Marcus Aurelius", cat: "Stoicism" },
+  { id: 38, text: "Very little is needed to make a happy life; it is all within your own way of thinking.", author: "Marcus Aurelius", cat: "Stoicism" },
+  { id: 39, text: "When you rise in the morning, think of what a privilege it is to be alive, to think, to enjoy, to love.", author: "Marcus Aurelius", cat: "Stoicism" },
+  { id: 40, text: "Choose not to be harmed, and you won't feel harmed. Don't feel harmed, and you haven't been.", author: "Marcus Aurelius", cat: "Stoicism" },
+  { id: 41, text: "How much time he gains who does not look to see what his neighbor says, does, or thinks.", author: "Marcus Aurelius", cat: "Focus" },
+  { id: 42, text: "Everything we hear is an opinion, not a fact. Everything we see is a perspective, not the whole truth.", author: "Marcus Aurelius", cat: "Stoicism" },
+  { id: 43, text: "If it is not right, do not do it. If it is not true, do not say it.", author: "Marcus Aurelius", cat: "Discipline" },
+  { id: 44, text: "Reject your sense of injury, and the injury itself disappears.", author: "Marcus Aurelius", cat: "Stoicism" },
+  { id: 45, text: "You could leave this life right now. Let that determine what you do, say, and think.", author: "Marcus Aurelius", cat: "Time" },
+  { id: 46, text: "Accept the things to which fate binds you, and love the people with whom fate brings you together.", author: "Marcus Aurelius", cat: "Stoicism" },
+  { id: 47, text: "A soul with no fixed aim loses itself, for it is impossible to steer a course you have not set.", author: "Marcus Aurelius", cat: "Focus" },
+  { id: 48, text: "Loss is nothing else but change, and change is nature's delight.", author: "Marcus Aurelius", cat: "Stoicism" },
+  { id: 49, text: "Every hour, focus your mind attentively on the task in hand, as if it were the last of your life.", author: "Marcus Aurelius", cat: "Focus" },
+  { id: 50, text: "Be like the rock that the waves keep crashing over. It stands unmoved, and the sea's fury settles around it.", author: "Marcus Aurelius", cat: "Willpower" },
+  { id: 51, text: "Never let the future disturb you. You will meet it, if you must, with the same reason that arms you today.", author: "Marcus Aurelius", cat: "Stoicism" },
+  { id: 52, text: "It is not death a man should fear. He should fear never beginning to truly live.", author: "Marcus Aurelius", cat: "Time" },
+  { id: 53, text: "Look within. Within is the fountain of good, and it will never stop rising if you keep digging.", author: "Marcus Aurelius", cat: "Focus" },
+  { id: 54, text: "Nowhere can a person find a quieter retreat than in their own soul.", author: "Marcus Aurelius", cat: "Stoicism" },
+  { id: 55, text: "Time is a river of passing events, and its current is strong. No sooner is a thing seen than it is swept away.", author: "Marcus Aurelius", cat: "Time" },
+  { id: 56, text: "If you are distressed by anything external, the pain is not from the thing itself, but your judgment of it — and that you can revoke at any moment.", author: "Marcus Aurelius", cat: "Stoicism" },
+  { id: 57, text: "A man's worth is measured by the worth of what he pursues.", author: "Marcus Aurelius", cat: "Discipline" },
+  { id: 58, text: "The best revenge is to not become like the one who wronged you.", author: "Marcus Aurelius", cat: "Stoicism" },
+  { id: 59, text: "Concentrate every minute on doing what is in front of you with precision and dignity, free of self-pity.", author: "Marcus Aurelius", cat: "Focus" },
+  { id: 60, text: "Waste no more time arguing about what a disciplined person should be. Be one.", author: "Marcus Aurelius", cat: "Discipline" },
+  { id: 61, text: "It is the power of the mind to be unconquerable.", author: "Seneca", cat: "Stoicism" },
+  { id: 62, text: "Sometimes even to live is an act of courage.", author: "Seneca", cat: "Willpower" },
+  { id: 63, text: "No man is free who is not master of himself.", author: "Epictetus", cat: "Discipline" },
+  { id: 64, text: "Circumstances don't make a person. They only reveal them to themselves.", author: "Epictetus", cat: "Stoicism" },
+  { id: 65, text: "Make the best use of what is in your power, and take the rest as it happens.", author: "Epictetus", cat: "Focus" },
+  { id: 66, text: "That which does not kill us makes us stronger.", author: "Friedrich Nietzsche", cat: "Suffering & Growth" },
+  { id: 67, text: "One must still have chaos in oneself to give birth to a dancing star.", author: "Friedrich Nietzsche", cat: "Suffering & Growth" },
+  { id: 68, text: "We are what we repeatedly do. Excellence, then, is not an act, but a habit.", author: "Aristotle", cat: "Discipline" },
+  { id: 69, text: "It does not matter how slowly you go, so long as you do not stop.", author: "Confucius", cat: "Discipline" },
+  { id: 70, text: "The man who moves a mountain begins by carrying away small stones.", author: "Confucius", cat: "Discipline" },
+  { id: 71, text: "The mind is everything. What you think, you become.", author: "The Buddha", cat: "Focus" },
+  { id: 72, text: "Better than a thousand hollow words is one word that brings peace.", author: "The Buddha", cat: "Focus" },
+  { id: 73, text: "I fear not the man who has practiced ten thousand kicks once, but the man who has practiced one kick ten thousand times.", author: "Bruce Lee", cat: "Discipline" },
+  { id: 74, text: "Do not pray for an easy life. Pray for the strength to endure a difficult one.", author: "Bruce Lee", cat: "Willpower" },
+  { id: 75, text: "You do not rise to the level of your goals. You fall to the level of your systems.", author: "James Clear", cat: "Discipline" },
+  { id: 76, text: "Discomfort is the tuition of growth. Pay it gladly.", author: "Anchor", cat: "Suffering & Growth" },
+  { id: 77, text: "The version of you that you're waiting to become is built entirely from days like today.", author: "Anchor", cat: "Discipline" },
+  { id: 78, text: "A disciplined mind does not wait for permission to begin.", author: "Anchor", cat: "Discipline" },
+  { id: 79, text: "What you tolerate today, you will repeat tomorrow.", author: "Anchor", cat: "Discipline" },
+  { id: 80, text: "There is no finish line for character. Only the next rep.", author: "Anchor", cat: "Willpower" },
+  { id: 81, text: "Willpower is a muscle, not a personality trait. Train it daily.", author: "Anchor", cat: "Willpower" },
+  { id: 82, text: "The standard you walk past is the standard you accept.", author: "Anchor", cat: "Discipline" },
+  { id: 83, text: "Do the hard thing while it is still small.", author: "Anchor", cat: "Discipline" },
+  { id: 84, text: "Consistency is not exciting. Neither is a foundation. Both hold everything up.", author: "Anchor", cat: "Discipline" },
+  { id: 85, text: "Suffering, asked for meaning, becomes purpose.", author: "Anchor", cat: "Suffering & Growth" },
+  { id: 86, text: "You are the only one keeping score. Play accordingly.", author: "Anchor", cat: "Willpower" },
+  { id: 87, text: "What lies behind us and before us are small matters compared to what lies within us.", author: "Ralph Waldo Emerson", cat: "Willpower" },
+  { id: 88, text: "Nothing in the world is worth having or worth doing unless it means effort, pain, and difficulty.", author: "Theodore Roosevelt", cat: "Willpower" },
+  { id: 89, text: "Success is not final, failure is not fatal. It is the courage to continue that counts.", author: "Winston Churchill", cat: "Willpower" },
+  { id: 90, text: "Momentum is a lie told to those who never start.", author: "Anchor", cat: "Discipline" },
+  { id: 91, text: "The greatest weapon against stress is our ability to choose one thought over another.", author: "William James", cat: "Focus" },
+  { id: 92, text: "Every day you skip is a vote against the person you're becoming.", author: "Anchor", cat: "Discipline" },
+  { id: 93, text: "Think of your life as if it were the last act of a good play. Finish it with the same grace you began it.", author: "Marcus Aurelius", cat: "Time" },
+  { id: 94, text: "Be tolerant with others and strict with yourself.", author: "Marcus Aurelius", cat: "Discipline" },
+  { id: 95, text: "The universe is change; our life is what our thoughts make it.", author: "Marcus Aurelius", cat: "Focus" },
+  { id: 96, text: "Give yourself a gift: the present moment.", author: "Marcus Aurelius", cat: "Focus" },
+
+  { id: 97, text: "The soul that is within me, no man can degrade.", author: "Frederick Douglass", cat: "Willpower" },
+  { id: 98, text: "He who conquers others is strong. He who conquers himself is mighty.", author: "Lao Tzu", cat: "Discipline" },
+  { id: 99, text: "A journey of a thousand miles begins with a single step.", author: "Lao Tzu", cat: "Discipline" },
+  { id: 100, text: "Nature does not hurry, yet everything is accomplished.", author: "Lao Tzu", cat: "Time" },
+  { id: 101, text: "When you have mastered numbers, you will in fact no longer be reading numbers, any more than you read words when reading books.", author: "Miyamoto Musashi", cat: "Focus" },
+  { id: 102, text: "There is nothing outside yourself that can ever enable you to get better, stronger, richer, quicker, or smarter.", author: "Miyamoto Musashi", cat: "Discipline" },
+  { id: 103, text: "Perceive that which cannot be seen with the eye.", author: "Miyamoto Musashi", cat: "Focus" },
+  { id: 104, text: "Today is victory over yourself of yesterday; tomorrow is your victory over lesser men.", author: "Miyamoto Musashi", cat: "Willpower" },
+  { id: 105, text: "The pessimist sees difficulty in every opportunity. The optimist sees opportunity in every difficulty.", author: "Winston Churchill", cat: "Focus" },
+  { id: 106, text: "Fall seven times, stand up eight.", author: "Japanese Proverb", cat: "Willpower" },
+  { id: 107, text: "The oak fought the wind and was broken; the willow bent when it must and survived.", author: "Robert Jordan", cat: "Suffering & Growth" },
+  { id: 108, text: "Man cannot discover new oceans unless he has the courage to lose sight of the shore.", author: "André Gide", cat: "Willpower" },
+  { id: 109, text: "Freedom is what you do with what's been done to you.", author: "Jean-Paul Sartre", cat: "Suffering & Growth" },
+  { id: 110, text: "Life has no meaning the moment you lose the illusion of being eternal.", author: "Jean-Paul Sartre", cat: "Time" },
+  { id: 111, text: "In the depth of winter, I finally learned that within me there lay an invincible summer.", author: "Albert Camus", cat: "Suffering & Growth" },
+  { id: 112, text: "You will never be happy if you continue to search for what happiness consists of. You will never live if you are looking for the meaning of life.", author: "Albert Camus", cat: "Focus" },
+  { id: 113, text: "The wound is the place where the light enters you.", author: "Rumi", cat: "Suffering & Growth" },
+  { id: 114, text: "Yesterday I was clever, so I wanted to change the world. Today I am wise, so I am changing myself.", author: "Rumi", cat: "Discipline" },
+  { id: 115, text: "Set your life on fire. Seek those who fan your flames.", author: "Rumi", cat: "Willpower" },
+  { id: 116, text: "The greatest weapon against the stress of daily living is our ability to choose one thought over another.", author: "William James", cat: "Focus" },
+  { id: 117, text: "Act as if what you do makes a difference. It does.", author: "William James", cat: "Discipline" },
+  { id: 118, text: "It is not enough to be busy. So are the ants. The question is: what are we busy about?", author: "Henry David Thoreau", cat: "Time" },
+  { id: 119, text: "Go confidently in the direction of your dreams. Live the life you have imagined.", author: "Henry David Thoreau", cat: "Willpower" },
+  { id: 120, text: "Things do not change; we change.", author: "Henry David Thoreau", cat: "Stoicism" },
+  { id: 121, text: "The struggle itself toward the heights is enough to fill a man's heart. One must imagine yourself content.", author: "Albert Camus", cat: "Suffering & Growth" },
+  { id: 122, text: "The successful warrior is the average man with laser-like focus.", author: "Bruce Lee", cat: "Focus" },
+  { id: 123, text: "Empty your mind, be formless, shapeless, like water. Water can flow or it can crash.", author: "Bruce Lee", cat: "Discipline" },
+  { id: 124, text: "Long-term consistency trumps short-term intensity.", author: "Bruce Lee", cat: "Discipline" },
+  { id: 125, text: "Under duress, most men do not rise to the level of their expectations; they fall to the level of their training.", author: "Archilochus", cat: "Discipline" },
+  { id: 126, text: "Discipline equals freedom.", author: "Anchor", cat: "Discipline" },
+  { id: 127, text: "No one is coming to save you from the work. That was always the point.", author: "Anchor", cat: "Willpower" },
+  { id: 128, text: "You don't need more time. You need less negotiation with yourself.", author: "Anchor", cat: "Discipline" },
+  { id: 129, text: "Feelings are weather. Commitments are the ground you stand on.", author: "Anchor", cat: "Willpower" },
+  { id: 130, text: "The mind will quit a thousand times before the body ever does.", author: "Anchor", cat: "Willpower" },
+  { id: 131, text: "The obstacle is not the interruption to the plan. It is the material the plan is made of.", author: "Anchor", cat: "Stoicism" },
+  { id: 132, text: "Nobody is watching you struggle at 5am. That is exactly why it counts.", author: "Anchor", cat: "Discipline" },
+  { id: 133, text: "Trade the comfort of no-decision for the clarity of a decision made.", author: "Anchor", cat: "Focus" },
+  { id: 134, text: "Ease is not the reward for discipline. It is the enemy of it.", author: "Anchor", cat: "Discipline" },
+  { id: 135, text: "You will not feel like it. Do it anyway. That sentence is the entire practice.", author: "Anchor", cat: "Willpower" },
+  { id: 136, text: "Growth asks for one thing consistently: the willingness to be bad at something on the way to being good at it.", author: "Anchor", cat: "Suffering & Growth" },
+  { id: 137, text: "Time does not ask your permission before it passes.", author: "Anchor", cat: "Time" },
+  { id: 138, text: "A calendar full of good intentions is still an empty calendar.", author: "Anchor", cat: "Discipline" },
+  { id: 139, text: "The compound interest of a habit is invisible daily and undeniable eventually.", author: "Anchor", cat: "Discipline" },
+  { id: 140, text: "Stop asking if you're ready. Readiness is a byproduct of starting, not a precondition for it.", author: "Anchor", cat: "Willpower" },
+  { id: 141, text: "There is a version of today where you did the hard thing first. Live in that one.", author: "Anchor", cat: "Discipline" },
+  { id: 142, text: "He who has overcome his fears will truly be free.", author: "Aristotle", cat: "Willpower" },
+  { id: 143, text: "Knowing yourself is the beginning of all wisdom.", author: "Aristotle", cat: "Focus" },
+  { id: 144, text: "Patience is bitter, but its fruit is sweet.", author: "Aristotle", cat: "Suffering & Growth" },
+  { id: 145, text: "The energy of the mind is the essence of life.", author: "Aristotle", cat: "Focus" },
+  { id: 146, text: "It is during our darkest moments that we must focus to see the light.", author: "Aristotle", cat: "Suffering & Growth" },
+  { id: 147, text: "He that is slow to anger is better than the mighty; and he that ruleth his spirit than he that taketh a city.", author: "Book of Proverbs", cat: "Stoicism" },
+  { id: 148, text: "For everything there is a season, and a time for every purpose.", author: "Ecclesiastes", cat: "Time" },
+  { id: 149, text: "Iron sharpens iron, so one man sharpens another.", author: "Book of Proverbs", cat: "Discipline" },
+  { id: 150, text: "The cave you fear to enter holds the treasure you seek.", author: "Joseph Campbell", cat: "Suffering & Growth" },
+  { id: 151, text: "We must let go of the life we planned so as to accept the one that is waiting for us.", author: "Joseph Campbell", cat: "Stoicism" },
+  { id: 152, text: "Follow your bliss and doors will open where there were only walls.", author: "Joseph Campbell", cat: "Willpower" },
+  { id: 153, text: "The greatest glory in living lies not in never falling, but in rising every time we fall.", author: "Nelson Mandela", cat: "Willpower" },
+  { id: 154, text: "It always seems impossible until it's done.", author: "Nelson Mandela", cat: "Discipline" },
+  { id: 155, text: "May your choices reflect your hopes, not your fears.", author: "Nelson Mandela", cat: "Focus" },
+  { id: 156, text: "Whatever you can do, or dream you can, begin it. Boldness has genius, power, and magic in it.", author: "Johann Wolfgang von Goethe", cat: "Willpower" },
+  { id: 157, text: "Knowing is not enough; we must apply. Willing is not enough; we must do.", author: "Johann Wolfgang von Goethe", cat: "Discipline" },
+  { id: 158, text: "He who moves not forward, goes backward.", author: "Johann Wolfgang von Goethe", cat: "Time" },
+  { id: 159, text: "Turn your wounds into wisdom.", author: "Oprah Winfrey", cat: "Suffering & Growth" },
+  { id: 160, text: "You get in life what you have the courage to ask for.", author: "Oprah Winfrey", cat: "Willpower" },
+  { id: 161, text: "The big secret in life is that there is no big secret. Whatever your goal, you can get there if you're willing to work.", author: "Oprah Winfrey", cat: "Discipline" },
+  { id: 162, text: "Absorb what is useful, discard what is useless, add what is specifically your own.", author: "Bruce Lee", cat: "Focus" },
+  { id: 163, text: "If you spend too much time thinking about a thing, you'll never get it done.", author: "Bruce Lee", cat: "Discipline" },
+  { id: 164, text: "A goal is not always meant to be reached; it often serves simply as something to aim at.", author: "Bruce Lee", cat: "Focus" },
+  { id: 165, text: "Simplicity is the ultimate sophistication.", author: "Leonardo da Vinci", cat: "Focus" },
+  { id: 166, text: "It had long since come to my attention that people of accomplishment rarely sat back and let things happen to them.", author: "Leonardo da Vinci", cat: "Discipline" },
+];
+
+const CATEGORIES = ["All", "Discipline", "Stoicism", "Willpower", "Focus", "Suffering & Growth", "Time"];
+
+function dayOfYear(d) {
+  const start = new Date(d.getFullYear(), 0, 0);
+  const diff = d - start;
+  return Math.floor(diff / 86400000);
+}
+function todayStr() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+}
+function loadJSON(key, fallback) {
+  try { const raw = localStorage.getItem(key); return raw ? JSON.parse(raw) : fallback; } catch(e) { return fallback; }
+}
+
+function useSwipeHandlers(onNext, onPrev) {
+  const startRef = React.useRef({ x: 0, y: 0 });
+  const onTouchStart = (e) => {
+    const t = e.touches[0];
+    startRef.current = { x: t.clientX, y: t.clientY };
+  };
+  const onTouchEnd = (e) => {
+    const t = e.changedTouches[0];
+    const dx = t.clientX - startRef.current.x;
+    const dy = t.clientY - startRef.current.y;
+    if (Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy) * 1.2) return;
+    if (dx < 0) onNext(); else onPrev();
+  };
+  return { onTouchStart, onTouchEnd };
+}
+
+function App() {
+  const [tab, setTab] = useState("today");
+  const [savedIds, setSavedIds] = useState(() => loadJSON("anchor_saved", []));
+  const [reflections, setReflections] = useState(() => loadJSON("anchor_reflections", {}));
+  const [visitDays, setVisitDays] = useState(() => loadJSON("anchor_visits", []));
+  const [customQuotes, setCustomQuotes] = useState(() => loadJSON("anchor_custom", []));
+
+  useEffect(() => { localStorage.setItem("anchor_saved", JSON.stringify(savedIds)); }, [savedIds]);
+  useEffect(() => { localStorage.setItem("anchor_reflections", JSON.stringify(reflections)); }, [reflections]);
+  useEffect(() => { localStorage.setItem("anchor_custom", JSON.stringify(customQuotes)); }, [customQuotes]);
+  useEffect(() => {
+    const t = todayStr();
+    if (!visitDays.includes(t)) {
+      const next = [...visitDays, t];
+      setVisitDays(next);
+      localStorage.setItem("anchor_visits", JSON.stringify(next));
+    }
+  }, []);
+
+  const allQuotes = useMemo(() => [...QUOTES, ...customQuotes], [customQuotes]);
+
+  const todayIndex = dayOfYear(new Date()) % allQuotes.length;
+  const [browseOffset, setBrowseOffset] = useState(0);
+  const activeIndex = (todayIndex + browseOffset + allQuotes.length * 100) % allQuotes.length;
+  const quote = allQuotes[activeIndex];
+
+  const toggleSave = (id) => setSavedIds(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]);
+  const setReflection = (id, text) => setReflections(prev => ({ ...prev, [id]: text }));
+  const addCustomQuote = (text, author) => {
+    const id = Date.now();
+    const q = { id, text: text.trim(), author: author.trim() || "You", cat: "Personal" };
+    setCustomQuotes(prev => [...prev, q]);
+    setSavedIds(prev => [...prev, id]); // your own quotes start off already kept, ready to cycle through
+    return id;
+  };
+  const removeCustomQuote = (id) => {
+    setCustomQuotes(prev => prev.filter(q => q.id !== id));
+    setSavedIds(prev => prev.filter(x => x !== id));
+  };
+
+  const dateLabel = new Date().toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric" });
+
+  return (
+    <div className="app">
+      <div className="header">
+        <div className="header-title">Anchor</div>
+        <div className="header-rule"></div>
+        {tab === "today" && <div className="header-date">{dateLabel}</div>}
+      </div>
+      <div className="content">
+        {tab === "today" && (
+          <TodayView
+            quote={quote} isToday={browseOffset === 0}
+            onPrev={() => setBrowseOffset(o => o - 1)} onNext={() => setBrowseOffset(o => o + 1)}
+            onReturnToToday={() => setBrowseOffset(0)}
+            isSaved={savedIds.includes(quote.id)} onToggleSave={() => toggleSave(quote.id)}
+            reflection={reflections[quote.id] || ""} onReflect={(t) => setReflection(quote.id, t)}
+          />
+        )}
+        {tab === "saved" && (
+          <SavedView
+            allQuotes={allQuotes} savedIds={savedIds} onRemove={toggleSave} reflections={reflections}
+            onReflect={setReflection} customIds={customQuotes.map(q => q.id)}
+            onAddCustom={addCustomQuote} onRemoveCustom={removeCustomQuote}
+          />
+        )}
+        {tab === "settings" && (
+          <SettingsView visitDays={visitDays} savedCount={savedIds.length} libSize={allQuotes.length} onReset={() => {
+            if (confirm("Clear all saved quotes, custom quotes, and reflections? This can't be undone.")) {
+              setSavedIds([]); setReflections({}); setCustomQuotes([]);
+            }
+          }} />
+        )}
+      </div>
+      <div className="bottom-nav">
+        <button className={"nav-btn " + (tab==="today"?"active":"")} onClick={() => setTab("today")}>
+          <span className="nav-icon">◈</span>Today
+        </button>
+        <button className={"nav-btn " + (tab==="saved"?"active":"")} onClick={() => setTab("saved")}>
+          <span className="nav-icon">☖</span>Saved
+        </button>
+        <button className={"nav-btn " + (tab==="settings"?"active":"")} onClick={() => setTab("settings")}>
+          <span className="nav-icon">⚙</span>Settings
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function TodayView({ quote, isToday, onPrev, onNext, onReturnToToday, isSaved, onToggleSave, reflection, onReflect }) {
+  const [showReflect, setShowReflect] = useState(false);
+  useEffect(() => { setShowReflect(false); }, [quote.id]);
+  const swipe = useSwipeHandlers(onNext, onPrev);
+
+  return (
+    <div>
+      <div className="tablet-wrap" {...swipe}>
+        <div className="tablet" key={quote.id}>
+          <div className="tablet-cat">{quote.cat}</div>
+          <div className="tablet-quote-mark">&ldquo;</div>
+          <div className="tablet-quote">{quote.text}</div>
+          <div className="tablet-footer">
+            <div className="tablet-rule"></div>
+            <div className="tablet-author">{quote.author}</div>
+          </div>
+        </div>
+      </div>
+
+      <div className="action-row">
+        <div className="action-btn" onClick={onPrev} title="Previous">←</div>
+        <div className={"action-btn big" + (isSaved ? " active" : "")} onClick={onToggleSave} title="Save">{isSaved ? "★" : "☆"}</div>
+        <div className="action-btn" onClick={() => setShowReflect(s => !s)} title="Reflect">✎</div>
+        <div className="action-btn" onClick={onNext} title="Next">→</div>
+      </div>
+
+      {!isToday && (
+        <div className="browse-row" style={{ marginTop: 14 }}>
+          <span className="browse-label" onClick={onReturnToToday} style={{ cursor: "pointer", color: "var(--bronze)" }}>↺ Return to today's anchor</span>
+        </div>
+      )}
+
+      {showReflect && (
+        <div className="reflect-wrap">
+          <div className="reflect-label">Your reflection</div>
+          <textarea
+            className="reflect-box"
+            placeholder="What does this mean for you today?"
+            value={reflection}
+            onChange={(e) => onReflect(e.target.value)}
+          />
+        </div>
+      )}
+    </div>
+  );
+}
+
+function SavedView({ allQuotes, savedIds, onRemove, reflections, onReflect, customIds, onAddCustom, onRemoveCustom }) {
+  const [mode, setMode] = useState("list"); // "list" | "cycle"
+  const [showAdd, setShowAdd] = useState(false);
+  const [draftText, setDraftText] = useState("");
+  const [draftAuthor, setDraftAuthor] = useState("");
+  const [cycleIndex, setCycleIndex] = useState(0);
+  const cycleSwipe = useSwipeHandlers(() => setCycleIndex(i => i + 1), () => setCycleIndex(i => i - 1));
+
+  const items = allQuotes.filter(q => savedIds.includes(q.id));
+
+  const submitCustom = () => {
+    if (!draftText.trim()) return;
+    onAddCustom(draftText, draftAuthor);
+    setDraftText(""); setDraftAuthor(""); setShowAdd(false);
+  };
+
+  if (items.length === 0 && !showAdd) {
+    return (
+      <div>
+        <div className="empty">
+          <div className="empty-glyph">☖</div>
+          <div className="empty-text">Nothing kept yet.<br/>Save a quote from Today, or add one of your own.</div>
+        </div>
+        <button className="btn-outline" style={{ borderColor: "var(--line-gold)", color: "var(--bronze-bright)" }} onClick={() => setShowAdd(true)}>+ Add your own quote</button>
+      </div>
+    );
+  }
+
+  const safeIndex = ((cycleIndex % items.length) + items.length) % items.length;
+  const cycleQuote = items[safeIndex];
+
+  return (
+    <div>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
+        <div className="section-title" style={{ marginBottom: 0 }}>{items.length} Kept</div>
+        <div className="chip-row" style={{ marginBottom: 0 }}>
+          <div className={"chip" + (mode === "list" ? " active" : "")} onClick={() => setMode("list")}>List</div>
+          <div className={"chip" + (mode === "cycle" ? " active" : "")} onClick={() => { setMode("cycle"); setCycleIndex(0); }}>Cycle</div>
+        </div>
+      </div>
+
+      {mode === "cycle" && items.length > 0 && (
+        <div>
+          <div className="tablet-wrap" {...cycleSwipe}>
+            <div className="tablet" key={cycleQuote.id}>
+              <div className="tablet-cat">{cycleQuote.cat}</div>
+              <div className="tablet-quote-mark">&ldquo;</div>
+              <div className="tablet-quote">{cycleQuote.text}</div>
+              <div className="tablet-footer">
+                <div className="tablet-rule"></div>
+                <div className="tablet-author">{cycleQuote.author}</div>
+              </div>
+            </div>
+          </div>
+          <div className="action-row">
+            <div className="action-btn" onClick={() => setCycleIndex(i => i - 1)}>←</div>
+            <div className="action-btn active" onClick={() => onRemove(cycleQuote.id)} title="Remove from saved">★</div>
+            <div className="action-btn" onClick={() => setCycleIndex(i => i + 1)}>→</div>
+          </div>
+          <div className="reflect-wrap">
+            <div className="reflect-label">Your reflection</div>
+            <textarea
+              className="reflect-box" placeholder="What does this mean for you today?"
+              value={reflections[cycleQuote.id] || ""} onChange={(e) => onReflect(cycleQuote.id, e.target.value)}
+            />
+          </div>
+        </div>
+      )}
+
+      {mode === "list" && items.map(q => (
+        <div className="saved-item" key={q.id}>
+          <div className="saved-quote">&ldquo;{q.text}&rdquo;</div>
+          <div className="saved-meta">
+            <span className="saved-author">{q.author} · {q.cat}</span>
+            <button className="saved-remove" onClick={() => customIds.includes(q.id) ? onRemoveCustom(q.id) : onRemove(q.id)}>
+              {customIds.includes(q.id) ? "Delete" : "Remove"}
+            </button>
+          </div>
+          {reflections[q.id] && (
+            <div style={{ marginTop: 10, fontSize: 12.5, color: "var(--ivory-dim)", lineHeight: 1.6, fontStyle: "italic" }}>
+              — {reflections[q.id]}
+            </div>
+          )}
+        </div>
+      ))}
+
+      {mode === "list" && (
+        showAdd ? (
+          <div className="settings-card" style={{ marginTop: 14 }}>
+            <div className="reflect-label">Your quote</div>
+            <textarea className="reflect-box" style={{ minHeight: 70, marginBottom: 12 }} placeholder="Type the quote or idea..." value={draftText} onChange={(e) => setDraftText(e.target.value)} />
+            <div className="reflect-label">Author (optional)</div>
+            <input className="reflect-box" style={{ minHeight: 0, padding: "12px 14px" }} placeholder="e.g. You, or who said it" value={draftAuthor} onChange={(e) => setDraftAuthor(e.target.value)} />
+            <div style={{ display: "flex", gap: 10, marginTop: 14 }}>
+              <button className="btn-outline" style={{ borderColor: "var(--line)", color: "var(--ivory-dim)" }} onClick={() => { setShowAdd(false); setDraftText(""); setDraftAuthor(""); }}>Cancel</button>
+              <button className="btn-outline" style={{ borderColor: "var(--line-gold)", color: "var(--bronze-bright)" }} onClick={submitCustom}>Save quote</button>
+            </div>
+          </div>
+        ) : (
+          <button className="btn-outline" style={{ borderColor: "var(--line-gold)", color: "var(--bronze-bright)", marginTop: 6 }} onClick={() => setShowAdd(true)}>+ Add your own quote</button>
+        )
+      )}
+    </div>
+  );
+}
+
+function SettingsView({ visitDays, savedCount, libSize, onReset }) {
+  return (
+    <div>
+      <div className="settings-card">
+        <div className="settings-row"><span className="settings-label">Days returned</span><span className="settings-val">{visitDays.length}</span></div>
+        <div className="settings-row"><span className="settings-label">Quotes kept</span><span className="settings-val">{savedCount}</span></div>
+        <div className="settings-row"><span className="settings-label">Library size</span><span className="settings-val">{libSize}</span></div>
+      </div>
+      <div className="settings-card">
+        <div style={{ fontSize: 12.5, color: "var(--ivory-dim)", lineHeight: 1.7 }}>
+          Anchor gives you one fixed quote each day — the same one on every device, all day — so it works as a single point of focus rather than something to scroll past. Browse freely with the arrows if you want more, or add your own quotes from the Saved tab to cycle through alongside the library.
+        </div>
+      </div>
+      <button className="btn-outline" onClick={onReset}>Clear Saved & Reflections</button>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>
