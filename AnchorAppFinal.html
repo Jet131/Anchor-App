@@ -2,10 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>Anchor</title>
-<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIj4KICA8ZGVmcz4KICAgIDxyYWRpYWxHcmFkaWVudCBpZD0iZ2xvdyIgY3g9IjUwJSIgY3k9IjQyJSIgcj0iNjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Q0YWY2YSIgc3RvcC1vcGFjaXR5PSIwLjM1Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Q0YWY2YSIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8L3JhZGlhbEdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgcng9IjQyIiBmaWxsPSIjMGQwZDBmIi8+CiAgPGNpcmNsZSBjeD0iOTYiIGN5PSI5MCIgcj0iNzYiIGZpbGw9InVybCgjZ2xvdykiLz4KICA8cmVjdCB4PSI3IiB5PSI3IiB3aWR0aD0iMTc4IiBoZWlnaHQ9IjE3OCIgcng9IjM2IiBmaWxsPSJub25lIiBzdHJva2U9IiNiMDhkNTciIHN0cm9rZS1vcGFjaXR5PSIwLjQ1IiBzdHJva2Utd2lkdGg9IjIiLz4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzNiwyMikgc2NhbGUoMS4yKSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZDliODc4IiBzdHJva2Utd2lkdGg9IjkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+CiAgICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjE2IiByPSIxMi41IiAvPgogICAgPGxpbmUgeDE9IjUwIiB5MT0iMjgiIHgyPSI1MCIgeTI9IjkwIiAvPgogICAgPGxpbmUgeDE9IjI0IiB5MT0iNDQiIHgyPSI3NiIgeTI9IjQ0IiAvPgogICAgPHBhdGggZD0iTTUwIDg4IEMgMTggODggNCAxMDQgMTggMTEyIEMgMjggMTE4IDQyIDEwOCA0NiA5NiIgLz4KICAgIDxwYXRoIGQ9Ik01MCA4OCBDIDgyIDg4IDk2IDEwNCA4MiAxMTIgQyA3MiAxMTggNTggMTA4IDU0IDk2IiAvPgogIDwvZz4KPC9zdmc+Cg==">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIj4KICA8ZGVmcz4KICAgIDxyYWRpYWxHcmFkaWVudCBpZD0iZ2xvdyIgY3g9IjUwJSIgY3k9IjQyJSIgcj0iNjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Q0YWY2YSIgc3RvcC1vcGFjaXR5PSIwLjM1Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Q0YWY2YSIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8L3JhZGlhbEdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgcng9IjQyIiBmaWxsPSIjMGQwZDBmIi8+CiAgPGNpcmNsZSBjeD0iOTYiIGN5PSI5MCIgcj0iNzYiIGZpbGw9InVybCgjZ2xvdykiLz4KICA8cmVjdCB4PSI3IiB5PSI3IiB3aWR0aD0iMTc4IiBoZWlnaHQ9IjE3OCIgcng9IjM2IiBmaWxsPSJub25lIiBzdHJva2U9IiNiMDhkNTciIHN0cm9rZS1vcGFjaXR5PSIwLjQ1IiBzdHJva2Utd2lkdGg9IjIiLz4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzNiwyMikgc2NhbGUoMS4yKSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZDliODc4IiBzdHJva2Utd2lkdGg9IjkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+CiAgICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjE2IiByPSIxMi41IiAvPgogICAgPGxpbmUgeDE9IjUwIiB5MT0iMjgiIHgyPSI1MCIgeTI9IjkwIiAvPgogICAgPGxpbmUgeDE9IjI0IiB5MT0iNDQiIHgyPSI3NiIgeTI9IjQ0IiAvPgogICAgPHBhdGggZD0iTTUwIDg4IEMgMTggODggNCAxMDQgMTggMTEyIEMgMjggMTE4IDQyIDEwOCA0NiA5NiIgLz4KICAgIDxwYXRoIGQ9Ik01MCA4OCBDIDgyIDg4IDk2IDEwNCA4MiAxMTIgQyA3MiAxMTggNTggMTA4IDU0IDk2IiAvPgogIDwvZz4KPC9zdmc+Cg==">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Anchor">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0d0d0f">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
@@ -34,6 +40,7 @@ body { font-family: 'Inter', sans-serif; color: var(--ivory); -webkit-font-smoot
 .app {
   width: 100%; max-width: 480px; min-height: 100vh; background: var(--onyx);
   display: flex; flex-direction: column; position: relative;
+  padding-top: env(safe-area-inset-top, 0px);
   background-image:
     radial-gradient(ellipse at 20% 0%, rgba(176,141,87,0.05), transparent 55%),
     radial-gradient(ellipse at 85% 100%, rgba(176,141,87,0.04), transparent 50%);
@@ -57,6 +64,7 @@ body { font-family: 'Inter', sans-serif; color: var(--ivory); -webkit-font-smoot
 .tablet-wrap { position: relative; margin: 10px 0 18px; }
 .tablet {
   position: relative; border-radius: 3px; padding: 44px 26px 30px;
+  overflow: hidden;
   background:
     radial-gradient(circle at 15% 8%, rgba(255,255,255,0.025), transparent 40%),
     linear-gradient(155deg, #1b1a18, #131211 60%);
@@ -66,17 +74,46 @@ body { font-family: 'Inter', sans-serif; color: var(--ivory); -webkit-font-smoot
   animation: tablet-in 0.5s cubic-bezier(.2,.8,.2,1);
 }
 @keyframes tablet-in { 0% { opacity: 0; transform: translateY(8px) scale(0.985); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
-.tablet::before, .tablet::after {
-  content: ''; position: absolute; width: 13px; height: 13px; border: 1px solid var(--line-gold);
+
+/* ambient ken-burns drift on the tablet's own background texture — slow, subtle, never distracting */
+.tablet::before {
+  content: ''; position: absolute; inset: -6%; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(circle at 22% 18%, rgba(212,175,106,0.05), transparent 46%),
+    radial-gradient(circle at 78% 82%, rgba(212,175,106,0.035), transparent 50%);
+  animation: kenburns 46s ease-in-out infinite alternate;
+  transform-origin: 50% 50%;
 }
-.tablet::before { top: 10px; left: 10px; border-right: none; border-bottom: none; }
-.tablet::after { bottom: 10px; right: 10px; border-left: none; border-top: none; }
+@keyframes kenburns {
+  0%   { transform: scale(1) translate(0%, 0%); }
+  100% { transform: scale(1.06) translate(-1.5%, 1%); }
+}
+.tablet > * { position: relative; z-index: 1; }
+
+.tablet::after {
+  content: ''; position: absolute; width: 13px; height: 13px; border: 1px solid var(--line-gold);
+  bottom: 10px; right: 10px; border-left: none; border-top: none; z-index: 2;
+}
+.tablet-corner-tl {
+  content: ''; position: absolute; width: 13px; height: 13px; border: 1px solid var(--line-gold);
+  top: 10px; left: 10px; border-right: none; border-bottom: none; z-index: 2; pointer-events: none;
+}
 .tablet-quote-mark { font-family: 'Cormorant Garamond', serif; font-size: 46px; color: var(--bronze); opacity: 0.55; line-height: 0.5; height: 30px; }
 .tablet-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 25px; line-height: 1.44; color: var(--ivory); flex: 1; }
 .tablet-footer { display: flex; align-items: center; gap: 12px; margin-top: 26px; }
 .tablet-rule { flex: 1; height: 1px; background: var(--line-gold); }
 .tablet-author { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bronze); font-weight: 700; white-space: nowrap; }
-.tablet-cat { position: absolute; top: 16px; right: 20px; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ivory-faint); font-weight: 700; }
+.tablet-cat { position: absolute; top: 16px; right: 20px; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ivory-faint); font-weight: 700; cursor: pointer; padding: 5px 9px; border-radius: 20px; border: 1px solid transparent; transition: all 0.15s; z-index: 2; }
+.tablet-cat:hover { color: var(--bronze-bright); border-color: var(--line-gold); }
+.tablet-cat.locked { color: var(--bronze-bright); border-color: var(--bronze); background: rgba(176,141,87,0.12); }
+
+/* engraved streak border — thin gold line traced around the tablet, thickening & brightening the more you return */
+.streak-border { position: absolute; inset: 0; pointer-events: none; z-index: 2; }
+.streak-border rect {
+  fill: none; stroke: var(--bronze-bright);
+  transition: stroke-dashoffset 1s ease, stroke-width 0.6s ease, opacity 0.6s ease;
+  vector-effect: non-scaling-stroke;
+}
 
 @media (max-width: 360px) {
   .content { padding: 10px 16px 20px; }
@@ -100,6 +137,9 @@ body { font-family: 'Inter', sans-serif; color: var(--ivory); -webkit-font-smoot
 
 .browse-row { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 4px; }
 .browse-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ivory-faint); font-weight: 700; }
+
+.lock-banner { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 14px; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bronze-bright); font-weight: 700; }
+.lock-banner span.clear { color: var(--ivory-faint); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
 
 /* reflection */
 .reflect-wrap { margin-top: 16px; animation: bz-fade-in 0.25s ease; }
@@ -183,7 +223,6 @@ const QUOTES = [
   { id: 34, text: "A river cuts through rock not because of its power, but its persistence.", author: "James N. Watkins", cat: "Discipline" },
   { id: 35, text: "You are not tired. You are undisciplined. Rest is earned, not defaulted to.", author: "Anchor", cat: "Willpower" },
   { id: 36, text: "The best time to plant a tree was twenty years ago. The second best time is now.", author: "Chinese Proverb", cat: "Time" },
-
   { id: 37, text: "Confine yourself to the present. It is the only thing a person can actually lose.", author: "Marcus Aurelius", cat: "Stoicism" },
   { id: 38, text: "Very little is needed to make a happy life; it is all within your own way of thinking.", author: "Marcus Aurelius", cat: "Stoicism" },
   { id: 39, text: "When you rise in the morning, think of what a privilege it is to be alive, to think, to enjoy, to love.", author: "Marcus Aurelius", cat: "Stoicism" },
@@ -244,7 +283,6 @@ const QUOTES = [
   { id: 94, text: "Be tolerant with others and strict with yourself.", author: "Marcus Aurelius", cat: "Discipline" },
   { id: 95, text: "The universe is change; our life is what our thoughts make it.", author: "Marcus Aurelius", cat: "Focus" },
   { id: 96, text: "Give yourself a gift: the present moment.", author: "Marcus Aurelius", cat: "Focus" },
-
   { id: 97, text: "The soul that is within me, no man can degrade.", author: "Frederick Douglass", cat: "Willpower" },
   { id: 98, text: "He who conquers others is strong. He who conquers himself is mighty.", author: "Lao Tzu", cat: "Discipline" },
   { id: 99, text: "A journey of a thousand miles begins with a single step.", author: "Lao Tzu", cat: "Discipline" },
@@ -315,9 +353,84 @@ const QUOTES = [
   { id: 164, text: "A goal is not always meant to be reached; it often serves simply as something to aim at.", author: "Bruce Lee", cat: "Focus" },
   { id: 165, text: "Simplicity is the ultimate sophistication.", author: "Leonardo da Vinci", cat: "Focus" },
   { id: 166, text: "It had long since come to my attention that people of accomplishment rarely sat back and let things happen to them.", author: "Leonardo da Vinci", cat: "Discipline" },
+
+  { id: 167, text: "He who has a strong enough why can bear almost any how.", author: "Friedrich Nietzsche", cat: "Suffering & Growth" },
+  { id: 168, text: "What does not kill me makes me stronger — and what does not break my patience makes it deeper.", author: "Anchor", cat: "Suffering & Growth" },
+  { id: 169, text: "The palest ink is better than the best memory. Write down what today taught you.", author: "Chinese Proverb", cat: "Time" },
+  { id: 170, text: "There is no wind favorable to the sailor who doesn't know where he's going.", author: "Seneca", cat: "Focus" },
+  { id: 171, text: "Luck is what happens when preparation meets opportunity.", author: "Seneca", cat: "Discipline" },
+  { id: 172, text: "He suffers more than necessary who suffers before it is necessary.", author: "Seneca", cat: "Stoicism" },
+  { id: 173, text: "Begin at once to live, and count each separate day as a separate life.", author: "Seneca", cat: "Time" },
+  { id: 174, text: "It is not that we have a short time to live, but that we waste much of it.", author: "Seneca", cat: "Time" },
+  { id: 175, text: "Difficulty shows what men are.", author: "Epictetus", cat: "Suffering & Growth" },
+  { id: 176, text: "Only the educated are free.", author: "Epictetus", cat: "Focus" },
+  { id: 177, text: "He is a wise man who does not grieve for the things which he has not, but rejoices for those which he has.", author: "Epictetus", cat: "Stoicism" },
+  { id: 178, text: "First learn the meaning of what you say, and then speak.", author: "Epictetus", cat: "Discipline" },
+  { id: 179, text: "Wealth consists not in having great possessions, but in having few wants.", author: "Epictetus", cat: "Stoicism" },
+  { id: 180, text: "The chief task in life is simply this: to identify and separate matters so that I can say clearly to myself which are externals not under my control, and which have to do with the choices I actually control.", author: "Epictetus", cat: "Stoicism" },
+  { id: 181, text: "Man is not worried by real problems so much as by his imagined anxieties about real problems.", author: "Epictetus", cat: "Stoicism" },
+  { id: 182, text: "If you want to improve, be content to be thought foolish and stupid.", author: "Epictetus", cat: "Discipline" },
+  { id: 183, text: "The obstacle in the way becomes the way. Don't waste it.", author: "Anchor", cat: "Stoicism" },
+  { id: 184, text: "You have exactly one thing to control: the next choice.", author: "Anchor", cat: "Focus" },
+  { id: 185, text: "The tired version of you and the disciplined version of you are the same person on different days. Choose which day this is.", author: "Anchor", cat: "Willpower" },
+  { id: 186, text: "Nobody remembers the day you almost started.", author: "Anchor", cat: "Discipline" },
+  { id: 187, text: "Small and steady beats big and occasional, every single time.", author: "Anchor", cat: "Discipline" },
+  { id: 188, text: "The work doesn't care how you feel about it. Show up anyway.", author: "Anchor", cat: "Willpower" },
+  { id: 189, text: "You are not behind. You are exactly where your choices have placed you — which means you can move.", author: "Anchor", cat: "Focus" },
+  { id: 190, text: "Rest when you've earned it. Push when you haven't.", author: "Anchor", cat: "Discipline" },
+  { id: 191, text: "Every master was once a disaster who kept showing up.", author: "Anchor", cat: "Suffering & Growth" },
+  { id: 192, text: "The hardest rep is the one you almost skip.", author: "Anchor", cat: "Willpower" },
+  { id: 193, text: "Fortune favors the bold.", author: "Virgil", cat: "Willpower" },
+  { id: 194, text: "He who is not courageous enough to take risks will accomplish nothing in life.", author: "Muhammad Ali", cat: "Willpower" },
+  { id: 195, text: "It ain't about how hard you hit. It's about how hard you can get hit and keep moving forward.", author: "Rocky Balboa", cat: "Suffering & Growth" },
+  { id: 196, text: "I've missed more than 9,000 shots. I've lost almost 300 games. I've failed over and over. That is why I succeed.", author: "Michael Jordan", cat: "Willpower" },
+  { id: 197, text: "The man who has confidence in himself gains the confidence of others.", author: "Hasidic Proverb", cat: "Willpower" },
+  { id: 198, text: "Amateurs sit and wait for inspiration. The rest of us just get up and go to work.", author: "Stephen King", cat: "Discipline" },
+  { id: 199, text: "You can't build a reputation on what you are going to do.", author: "Henry Ford", cat: "Discipline" },
+  { id: 200, text: "Whether you think you can, or you think you can't — you're right.", author: "Henry Ford", cat: "Willpower" },
+  { id: 201, text: "There is only one thing that makes a dream impossible to achieve: the fear of failure.", author: "Paulo Coelho", cat: "Willpower" },
+  { id: 202, text: "The struggle you're in today is developing the strength you need for tomorrow.", author: "Robert Tew", cat: "Suffering & Growth" },
+  { id: 203, text: "Hardships often prepare ordinary people for an extraordinary destiny.", author: "C.S. Lewis", cat: "Suffering & Growth" },
+  { id: 204, text: "The wound is where the light enters. The scar is where the strength stays.", author: "Anchor", cat: "Suffering & Growth" },
+  { id: 205, text: "Not all storms come to disrupt your life. Some come to clear your path.", author: "Anchor", cat: "Suffering & Growth" },
+  { id: 206, text: "There is a certain relief in change, even though it be from bad to worse; as I have found in traveling in a stagecoach, that it is often a comfort to shift one's position and be bruised in a new place.", author: "Washington Irving", cat: "Suffering & Growth" },
+  { id: 207, text: "You never know how strong you are until being strong is the only choice you have.", author: "Bob Marley", cat: "Willpower" },
+  { id: 208, text: "Stars can't shine without darkness.", author: "D.H. Sidebottom", cat: "Suffering & Growth" },
+  { id: 209, text: "Turn your face to the sun and the shadows fall behind you.", author: "Maori Proverb", cat: "Focus" },
+  { id: 210, text: "The best way out is always through.", author: "Robert Frost", cat: "Suffering & Growth" },
+  { id: 211, text: "In the middle of every difficulty lies opportunity.", author: "Albert Einstein", cat: "Focus" },
+  { id: 212, text: "Time you enjoy wasting is not wasted time — but time you regret losing is a debt only discipline repays.", author: "Anchor", cat: "Time" },
+  { id: 213, text: "Yesterday is gone. Tomorrow has not yet come. We have only today. Let us begin.", author: "Mother Teresa", cat: "Time" },
+  { id: 214, text: "Lost time is never found again.", author: "Benjamin Franklin", cat: "Time" },
+  { id: 215, text: "The two most important days in your life are the day you are born and the day you find out why.", author: "Mark Twain", cat: "Focus" },
+  { id: 216, text: "Don't count the days, make the days count.", author: "Muhammad Ali", cat: "Time" },
+  { id: 217, text: "An inch of time is an inch of gold, but you can't buy that inch of time with an inch of gold.", author: "Chinese Proverb", cat: "Time" },
+  { id: 218, text: "Time stays long enough for anyone who will use it.", author: "Leonardo da Vinci", cat: "Time" },
+  { id: 219, text: "The trouble is, you think you have time.", author: "Jack Kornfield", cat: "Time" },
+  { id: 220, text: "Time is the coin of your life. It is the only coin you have, and only you can determine how it will be spent.", author: "Carl Sandburg", cat: "Time" },
+  { id: 221, text: "One day or day one. You decide.", author: "Anchor", cat: "Discipline" },
+  { id: 222, text: "The clock is not your enemy. Your negotiating with yourself is.", author: "Anchor", cat: "Focus" },
+  { id: 223, text: "A ship in harbor is safe, but that is not what ships are built for.", author: "John A. Shedd", cat: "Willpower" },
+  { id: 224, text: "The cave you fear holds the treasure. Walk in.", author: "Anchor", cat: "Suffering & Growth" },
+  { id: 225, text: "You cannot swim for new horizons until you have courage to lose sight of the shore.", author: "William Faulkner", cat: "Willpower" },
+  { id: 226, text: "Do not go where the path may lead; go instead where there is no path and leave a trail.", author: "Ralph Waldo Emerson", cat: "Focus" },
+  { id: 227, text: "Nothing splendid has ever been achieved except by those who dared believe something inside them was superior to circumstance.", author: "Bruce Barton", cat: "Willpower" },
+  { id: 228, text: "The only way to make sense out of change is to plunge into it, move with it, and join the dance.", author: "Alan Watts", cat: "Focus" },
+  { id: 229, text: "What you do today can improve all your tomorrows.", author: "Ralph Marston", cat: "Discipline" },
+  { id: 230, text: "He who is not contented with what he has, would not be contented with what he would like to have.", author: "Socrates", cat: "Stoicism" },
+  { id: 231, text: "The unexamined life is not worth living.", author: "Socrates", cat: "Focus" },
+  { id: 232, text: "Wonder is the beginning of wisdom.", author: "Socrates", cat: "Focus" },
+  { id: 233, text: "To find yourself, think for yourself.", author: "Socrates", cat: "Focus" },
+  { id: 234, text: "An unexamined mind runs on other people's opinions all day. Take it back.", author: "Anchor", cat: "Focus" },
+  { id: 235, text: "Character is doing the right thing when nobody's looking.", author: "J.C. Watts", cat: "Discipline" },
+  { id: 236, text: "The price of discipline is always less than the price of regret.", author: "Anchor", cat: "Discipline" },
+  { id: 237, text: "What feels like a setback is often a setup for a comeback.", author: "Anchor", cat: "Suffering & Growth" },
+  { id: 238, text: "Do the thing today that your future self will thank you for.", author: "Anchor", cat: "Discipline" },
+  { id: 239, text: "Grit is sticking with your future, day in and day out.", author: "Angela Duckworth", cat: "Willpower" },
+  { id: 240, text: "Motivation gets you going. Discipline keeps you growing.", author: "John C. Maxwell", cat: "Discipline" },
 ];
 
-const CATEGORIES = ["All", "Discipline", "Stoicism", "Willpower", "Focus", "Suffering & Growth", "Time"];
+const CATEGORIES = ["Discipline", "Stoicism", "Willpower", "Focus", "Suffering & Growth", "Time"];
 
 function dayOfYear(d) {
   const start = new Date(d.getFullYear(), 0, 0);
@@ -326,6 +439,11 @@ function dayOfYear(d) {
 }
 function todayStr() {
   const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+}
+function addDaysStr(dateStr, n) {
+  const d = new Date(dateStr + "T00:00:00");
+  d.setDate(d.getDate() + n);
   return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
 }
 function loadJSON(key, fallback) {
@@ -348,12 +466,53 @@ function useSwipeHandlers(onNext, onPrev) {
   return { onTouchStart, onTouchEnd };
 }
 
+// consecutive-day streak computed from visitDays, counting back from today (or yesterday if today not yet visited)
+function computeStreak(visitDays) {
+  const set = new Set(visitDays);
+  const today = todayStr();
+  let cursor = set.has(today) ? today : addDaysStr(today, -1);
+  if (!set.has(cursor)) return 0;
+  let count = 0;
+  let safety = 0;
+  while (set.has(cursor) && safety < 2000) {
+    count++;
+    cursor = addDaysStr(cursor, -1);
+    safety++;
+  }
+  return count;
+}
+
+// SVG border that engraves itself around the tablet as the streak grows.
+// Caps visually at STREAK_CAP days — after that it's simply "fully engraved," no numbers involved.
+const STREAK_CAP = 45;
+function EngravedBorder({ streak }) {
+  const progress = Math.max(0, Math.min(1, streak / STREAK_CAP));
+  // perimeter of a rounded rect approx, using a fixed local coordinate system that scales with the SVG viewBox
+  const w = 400, h = 300, r = 6, m = 3;
+  const perim = 2 * (w - 2 * m) + 2 * (h - 2 * m) - 8 * r + 2 * Math.PI * r;
+  const dashOffset = perim * (1 - progress);
+  const strokeWidth = 0.6 + progress * 1.8;
+  const opacity = 0.16 + progress * 0.6;
+  return (
+    <svg className="streak-border" viewBox={`0 0 ${w} ${h}`} preserveAspectRatio="none" aria-hidden="true">
+      <rect
+        x={m} y={m} width={w - 2 * m} height={h - 2 * m} rx={r} ry={r}
+        strokeWidth={strokeWidth}
+        strokeDasharray={perim}
+        strokeDashoffset={dashOffset}
+        style={{ opacity }}
+      />
+    </svg>
+  );
+}
+
 function App() {
   const [tab, setTab] = useState("today");
   const [savedIds, setSavedIds] = useState(() => loadJSON("anchor_saved", []));
   const [reflections, setReflections] = useState(() => loadJSON("anchor_reflections", {}));
   const [visitDays, setVisitDays] = useState(() => loadJSON("anchor_visits", []));
   const [customQuotes, setCustomQuotes] = useState(() => loadJSON("anchor_custom", []));
+  const [lockedCategory, setLockedCategory] = useState(null);
 
   useEffect(() => { localStorage.setItem("anchor_saved", JSON.stringify(savedIds)); }, [savedIds]);
   useEffect(() => { localStorage.setItem("anchor_reflections", JSON.stringify(reflections)); }, [reflections]);
@@ -368,11 +527,29 @@ function App() {
   }, []);
 
   const allQuotes = useMemo(() => [...QUOTES, ...customQuotes], [customQuotes]);
+  const streak = useMemo(() => computeStreak(visitDays), [visitDays]);
 
   const todayIndex = dayOfYear(new Date()) % allQuotes.length;
   const [browseOffset, setBrowseOffset] = useState(0);
-  const activeIndex = (todayIndex + browseOffset + allQuotes.length * 100) % allQuotes.length;
-  const quote = allQuotes[activeIndex];
+
+  // when a category is locked, browsing walks only through quotes in that category;
+  // otherwise it walks the full library as before.
+  const activePool = useMemo(() => {
+    if (!lockedCategory) return allQuotes;
+    const filtered = allQuotes.filter(q => q.cat === lockedCategory);
+    return filtered.length ? filtered : allQuotes;
+  }, [allQuotes, lockedCategory]);
+
+  const baseIndex = lockedCategory
+    ? dayOfYear(new Date()) % activePool.length
+    : todayIndex;
+  const activeIndex = (baseIndex + browseOffset + activePool.length * 1000) % activePool.length;
+  const quote = activePool[activeIndex];
+
+  const toggleLockCategory = (cat) => {
+    setBrowseOffset(0);
+    setLockedCategory(prev => prev === cat ? null : cat);
+  };
 
   const toggleSave = (id) => setSavedIds(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]);
   const setReflection = (id, text) => setReflections(prev => ({ ...prev, [id]: text }));
@@ -380,7 +557,7 @@ function App() {
     const id = Date.now();
     const q = { id, text: text.trim(), author: author.trim() || "You", cat: "Personal" };
     setCustomQuotes(prev => [...prev, q]);
-    setSavedIds(prev => [...prev, id]); // your own quotes start off already kept, ready to cycle through
+    setSavedIds(prev => [...prev, id]);
     return id;
   };
   const removeCustomQuote = (id) => {
@@ -400,7 +577,8 @@ function App() {
       <div className="content">
         {tab === "today" && (
           <TodayView
-            quote={quote} isToday={browseOffset === 0}
+            quote={quote} isToday={browseOffset === 0} streak={streak}
+            lockedCategory={lockedCategory} onToggleLock={toggleLockCategory}
             onPrev={() => setBrowseOffset(o => o - 1)} onNext={() => setBrowseOffset(o => o + 1)}
             onReturnToToday={() => setBrowseOffset(0)}
             isSaved={savedIds.includes(quote.id)} onToggleSave={() => toggleSave(quote.id)}
@@ -415,7 +593,7 @@ function App() {
           />
         )}
         {tab === "settings" && (
-          <SettingsView visitDays={visitDays} savedCount={savedIds.length} libSize={allQuotes.length} onReset={() => {
+          <SettingsView visitDays={visitDays} savedCount={savedIds.length} libSize={allQuotes.length} streak={streak} onReset={() => {
             if (confirm("Clear all saved quotes, custom quotes, and reflections? This can't be undone.")) {
               setSavedIds([]); setReflections({}); setCustomQuotes([]);
             }
@@ -437,16 +615,21 @@ function App() {
   );
 }
 
-function TodayView({ quote, isToday, onPrev, onNext, onReturnToToday, isSaved, onToggleSave, reflection, onReflect }) {
+function TodayView({ quote, isToday, streak, lockedCategory, onToggleLock, onPrev, onNext, onReturnToToday, isSaved, onToggleSave, reflection, onReflect }) {
   const [showReflect, setShowReflect] = useState(false);
   useEffect(() => { setShowReflect(false); }, [quote.id]);
   const swipe = useSwipeHandlers(onNext, onPrev);
+  const locked = lockedCategory === quote.cat;
 
   return (
     <div>
       <div className="tablet-wrap" {...swipe}>
         <div className="tablet" key={quote.id}>
-          <div className="tablet-cat">{quote.cat}</div>
+          <div className="tablet-corner-tl"></div>
+          <EngravedBorder streak={streak} />
+          <div className={"tablet-cat" + (locked ? " locked" : "")} onClick={() => onToggleLock(quote.cat)} title={locked ? "Tap to unlock" : "Tap to browse only " + quote.cat}>
+            {locked ? "🔒 " : ""}{quote.cat}
+          </div>
           <div className="tablet-quote-mark">&ldquo;</div>
           <div className="tablet-quote">{quote.text}</div>
           <div className="tablet-footer">
@@ -463,7 +646,14 @@ function TodayView({ quote, isToday, onPrev, onNext, onReturnToToday, isSaved, o
         <div className="action-btn" onClick={onNext} title="Next">→</div>
       </div>
 
-      {!isToday && (
+      {lockedCategory && (
+        <div className="lock-banner">
+          <span>Browsing only: {lockedCategory}</span>
+          <span className="clear" onClick={() => onToggleLock(lockedCategory)}>clear</span>
+        </div>
+      )}
+
+      {!isToday && !lockedCategory && (
         <div className="browse-row" style={{ marginTop: 14 }}>
           <span className="browse-label" onClick={onReturnToToday} style={{ cursor: "pointer", color: "var(--bronze)" }}>↺ Return to today's anchor</span>
         </div>
@@ -590,23 +780,25 @@ function SavedView({ allQuotes, savedIds, onRemove, reflections, onReflect, cust
   );
 }
 
-function SettingsView({ visitDays, savedCount, libSize, onReset }) {
+function SettingsView({ visitDays, savedCount, libSize, streak, onReset }) {
   return (
     <div>
       <div className="settings-card">
         <div className="settings-row"><span className="settings-label">Days returned</span><span className="settings-val">{visitDays.length}</span></div>
+        <div className="settings-row"><span className="settings-label">Current run</span><span className="settings-val">{streak >= STREAK_CAP_DISPLAY ? "Fully engraved" : streak + (streak === 1 ? " day" : " days")}</span></div>
         <div className="settings-row"><span className="settings-label">Quotes kept</span><span className="settings-val">{savedCount}</span></div>
         <div className="settings-row"><span className="settings-label">Library size</span><span className="settings-val">{libSize}</span></div>
       </div>
       <div className="settings-card">
         <div style={{ fontSize: 12.5, color: "var(--ivory-dim)", lineHeight: 1.7 }}>
-          Anchor gives you one fixed quote each day — the same one on every device, all day — so it works as a single point of focus rather than something to scroll past. Browse freely with the arrows if you want more, or add your own quotes from the Saved tab to cycle through alongside the library.
+          Anchor gives you one fixed quote each day — the same one on every device, all day — so it works as a single point of focus rather than something to scroll past. The line etched around the tablet is your quiet record of returning: no counter, no pressure, just a border that slowly fills in. Tap a category tag to browse only within it for a while. Add your own quotes from the Saved tab to cycle through alongside the library.
         </div>
       </div>
       <button className="btn-outline" onClick={onReset}>Clear Saved & Reflections</button>
     </div>
   );
 }
+const STREAK_CAP_DISPLAY = 45;
 
 ReactDOM.createRoot(document.getElementById("root")).render(<App />);
 </script>
