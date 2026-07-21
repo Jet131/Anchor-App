@@ -13,10 +13,9 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#0d0d0f">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500,600;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
 <style>
 :root {
   --onyx: #0d0d0f;
@@ -46,7 +45,6 @@ body { font-family: 'Inter', sans-serif; color: var(--ivory); -webkit-font-smoot
     radial-gradient(ellipse at 85% 100%, rgba(176,141,87,0.04), transparent 50%);
 }
 
-/* header */
 .header { padding: 26px 24px 6px; text-align: center; flex-shrink: 0; }
 .header-title { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 600; letter-spacing: 0.32em; text-transform: uppercase; color: var(--bronze); }
 .header-rule { width: 34px; height: 1px; background: var(--line-gold); margin: 10px auto 0; }
@@ -54,13 +52,11 @@ body { font-family: 'Inter', sans-serif; color: var(--ivory); -webkit-font-smoot
 
 .content { flex: 1; overflow-y: auto; padding: 10px 22px 20px; }
 
-/* bottom nav */
 .bottom-nav { display: flex; background: var(--surface); border-top: 1px solid var(--line); flex-shrink: 0; padding: 4px 0 calc(4px + env(safe-area-inset-bottom, 0px)); }
 .nav-btn { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; background: none; border: none; color: var(--ivory-faint); font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; padding: 10px 0 8px; transition: color 0.2s; }
 .nav-btn.active { color: var(--bronze-bright); }
 .nav-icon { font-size: 16px; opacity: 0.9; }
 
-/* tablet card */
 .tablet-wrap { position: relative; margin: 10px 0 18px; }
 .tablet {
   position: relative; border-radius: 3px; padding: 44px 26px 30px;
@@ -75,7 +71,6 @@ body { font-family: 'Inter', sans-serif; color: var(--ivory); -webkit-font-smoot
 }
 @keyframes tablet-in { 0% { opacity: 0; transform: translateY(8px) scale(0.985); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
 
-/* ambient ken-burns drift on the tablet's own background texture — slow, subtle, never distracting */
 .tablet::before {
   content: ''; position: absolute; inset: -6%; pointer-events: none; z-index: 0;
   background:
@@ -107,7 +102,6 @@ body { font-family: 'Inter', sans-serif; color: var(--ivory); -webkit-font-smoot
 .tablet-cat:hover { color: var(--bronze-bright); border-color: var(--line-gold); }
 .tablet-cat.locked { color: var(--bronze-bright); border-color: var(--bronze); background: rgba(176,141,87,0.12); }
 
-/* engraved streak border — thin gold line traced around the tablet, thickening & brightening the more you return */
 .streak-border { position: absolute; inset: 0; pointer-events: none; z-index: 2; }
 .streak-border rect {
   fill: none; stroke: var(--bronze-bright);
@@ -124,7 +118,6 @@ body { font-family: 'Inter', sans-serif; color: var(--ivory); -webkit-font-smoot
   .action-btn.big { width: 48px; height: 48px; font-size: 17px; }
 }
 
-/* action row */
 .action-row { display: flex; justify-content: center; gap: 10px; margin-top: 16px; }
 .action-btn {
   width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--line);
@@ -141,7 +134,6 @@ body { font-family: 'Inter', sans-serif; color: var(--ivory); -webkit-font-smoot
 .lock-banner { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 14px; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bronze-bright); font-weight: 700; }
 .lock-banner span.clear { color: var(--ivory-faint); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
 
-/* reflection */
 .reflect-wrap { margin-top: 16px; animation: bz-fade-in 0.25s ease; }
 @keyframes bz-fade-in { from { opacity: 0; } to { opacity: 1; } }
 .reflect-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bronze); font-weight: 700; margin-bottom: 8px; }
@@ -153,7 +145,6 @@ body { font-family: 'Inter', sans-serif; color: var(--ivory); -webkit-font-smoot
 .reflect-box:focus { border-color: var(--line-gold); }
 .reflect-box::placeholder { color: var(--ivory-faint); }
 
-/* saved list */
 .saved-item { padding: 18px 0; border-bottom: 1px solid var(--line); }
 .saved-item:last-child { border-bottom: none; }
 .saved-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 18px; color: var(--ivory); line-height: 1.4; }
@@ -165,15 +156,12 @@ body { font-family: 'Inter', sans-serif; color: var(--ivory); -webkit-font-smoot
 .empty-glyph { font-family: 'Cormorant Garamond', serif; font-size: 32px; color: var(--bronze); opacity: 0.5; margin-bottom: 14px; }
 .empty-text { font-size: 13px; line-height: 1.7; }
 
-/* category filter */
 .chip-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
 .chip { padding: 7px 13px; border-radius: 20px; border: 1px solid var(--line); font-size: 11px; font-weight: 700; letter-spacing: 0.03em; color: var(--ivory-dim); cursor: pointer; background: var(--surface); transition: all 0.15s; }
 .chip.active { border-color: var(--bronze); color: var(--bronze-bright); background: rgba(176,141,87,0.1); }
 
-/* section title */
 .section-title { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ivory-faint); font-weight: 700; margin-bottom: 14px; }
 
-/* settings */
 .settings-card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px; margin-bottom: 14px; }
 .settings-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; font-size: 13px; }
 .settings-label { color: var(--ivory-dim); }
@@ -183,7 +171,8 @@ body { font-family: 'Inter', sans-serif; color: var(--ivory); -webkit-font-smoot
 </head>
 <body>
 <div id="root"></div>
-<script type="text/babel">
+<script>
+const e = React.createElement;
 const { useState, useEffect, useMemo } = React;
 
 const QUOTES = [
@@ -353,7 +342,6 @@ const QUOTES = [
   { id: 164, text: "A goal is not always meant to be reached; it often serves simply as something to aim at.", author: "Bruce Lee", cat: "Focus" },
   { id: 165, text: "Simplicity is the ultimate sophistication.", author: "Leonardo da Vinci", cat: "Focus" },
   { id: 166, text: "It had long since come to my attention that people of accomplishment rarely sat back and let things happen to them.", author: "Leonardo da Vinci", cat: "Discipline" },
-
   { id: 167, text: "He who has a strong enough why can bear almost any how.", author: "Friedrich Nietzsche", cat: "Suffering & Growth" },
   { id: 168, text: "What does not kill me makes me stronger — and what does not break my patience makes it deeper.", author: "Anchor", cat: "Suffering & Growth" },
   { id: 169, text: "The palest ink is better than the best memory. Write down what today taught you.", author: "Chinese Proverb", cat: "Time" },
@@ -427,10 +415,8 @@ const QUOTES = [
   { id: 237, text: "What feels like a setback is often a setup for a comeback.", author: "Anchor", cat: "Suffering & Growth" },
   { id: 238, text: "Do the thing today that your future self will thank you for.", author: "Anchor", cat: "Discipline" },
   { id: 239, text: "Grit is sticking with your future, day in and day out.", author: "Angela Duckworth", cat: "Willpower" },
-  { id: 240, text: "Motivation gets you going. Discipline keeps you growing.", author: "John C. Maxwell", cat: "Discipline" },
+  { id: 240, text: "Motivation gets you going. Discipline keeps you growing.", author: "John C. Maxwell", cat: "Discipline" }
 ];
-
-const CATEGORIES = ["Discipline", "Stoicism", "Willpower", "Focus", "Suffering & Growth", "Time"];
 
 function dayOfYear(d) {
   const start = new Date(d.getFullYear(), 0, 0);
@@ -439,12 +425,12 @@ function dayOfYear(d) {
 }
 function todayStr() {
   const d = new Date();
-  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+  return d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0");
 }
 function addDaysStr(dateStr, n) {
   const d = new Date(dateStr + "T00:00:00");
   d.setDate(d.getDate() + n);
-  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+  return d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0");
 }
 function loadJSON(key, fallback) {
   try { const raw = localStorage.getItem(key); return raw ? JSON.parse(raw) : fallback; } catch(e) { return fallback; }
@@ -452,21 +438,20 @@ function loadJSON(key, fallback) {
 
 function useSwipeHandlers(onNext, onPrev) {
   const startRef = React.useRef({ x: 0, y: 0 });
-  const onTouchStart = (e) => {
-    const t = e.touches[0];
+  const onTouchStart = (ev) => {
+    const t = ev.touches[0];
     startRef.current = { x: t.clientX, y: t.clientY };
   };
-  const onTouchEnd = (e) => {
-    const t = e.changedTouches[0];
+  const onTouchEnd = (ev) => {
+    const t = ev.changedTouches[0];
     const dx = t.clientX - startRef.current.x;
     const dy = t.clientY - startRef.current.y;
     if (Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy) * 1.2) return;
     if (dx < 0) onNext(); else onPrev();
   };
-  return { onTouchStart, onTouchEnd };
+  return { onTouchStart: onTouchStart, onTouchEnd: onTouchEnd };
 }
 
-// consecutive-day streak computed from visitDays, counting back from today (or yesterday if today not yet visited)
 function computeStreak(visitDays) {
   const set = new Set(visitDays);
   const today = todayStr();
@@ -482,325 +467,292 @@ function computeStreak(visitDays) {
   return count;
 }
 
-// SVG border that engraves itself around the tablet as the streak grows.
-// Caps visually at STREAK_CAP days — after that it's simply "fully engraved," no numbers involved.
 const STREAK_CAP = 45;
-function EngravedBorder({ streak }) {
+const STREAK_CAP_DISPLAY = 45;
+
+function EngravedBorder(props) {
+  const streak = props.streak;
   const progress = Math.max(0, Math.min(1, streak / STREAK_CAP));
-  // perimeter of a rounded rect approx, using a fixed local coordinate system that scales with the SVG viewBox
   const w = 400, h = 300, r = 6, m = 3;
   const perim = 2 * (w - 2 * m) + 2 * (h - 2 * m) - 8 * r + 2 * Math.PI * r;
   const dashOffset = perim * (1 - progress);
   const strokeWidth = 0.6 + progress * 1.8;
   const opacity = 0.16 + progress * 0.6;
-  return (
-    <svg className="streak-border" viewBox={`0 0 ${w} ${h}`} preserveAspectRatio="none" aria-hidden="true">
-      <rect
-        x={m} y={m} width={w - 2 * m} height={h - 2 * m} rx={r} ry={r}
-        strokeWidth={strokeWidth}
-        strokeDasharray={perim}
-        strokeDashoffset={dashOffset}
-        style={{ opacity }}
-      />
-    </svg>
+  return e("svg", { className: "streak-border", viewBox: "0 0 " + w + " " + h, preserveAspectRatio: "none", "aria-hidden": "true" },
+    e("rect", {
+      x: m, y: m, width: w - 2 * m, height: h - 2 * m, rx: r, ry: r,
+      strokeWidth: strokeWidth,
+      strokeDasharray: perim,
+      strokeDashoffset: dashOffset,
+      style: { opacity: opacity }
+    })
   );
 }
 
-function App() {
-  const [tab, setTab] = useState("today");
-  const [savedIds, setSavedIds] = useState(() => loadJSON("anchor_saved", []));
-  const [reflections, setReflections] = useState(() => loadJSON("anchor_reflections", {}));
-  const [visitDays, setVisitDays] = useState(() => loadJSON("anchor_visits", []));
-  const [customQuotes, setCustomQuotes] = useState(() => loadJSON("anchor_custom", []));
-  const [lockedCategory, setLockedCategory] = useState(null);
-
-  useEffect(() => { localStorage.setItem("anchor_saved", JSON.stringify(savedIds)); }, [savedIds]);
-  useEffect(() => { localStorage.setItem("anchor_reflections", JSON.stringify(reflections)); }, [reflections]);
-  useEffect(() => { localStorage.setItem("anchor_custom", JSON.stringify(customQuotes)); }, [customQuotes]);
-  useEffect(() => {
-    const t = todayStr();
-    if (!visitDays.includes(t)) {
-      const next = [...visitDays, t];
-      setVisitDays(next);
-      localStorage.setItem("anchor_visits", JSON.stringify(next));
-    }
-  }, []);
-
-  const allQuotes = useMemo(() => [...QUOTES, ...customQuotes], [customQuotes]);
-  const streak = useMemo(() => computeStreak(visitDays), [visitDays]);
-
-  const todayIndex = dayOfYear(new Date()) % allQuotes.length;
-  const [browseOffset, setBrowseOffset] = useState(0);
-
-  // when a category is locked, browsing walks only through quotes in that category;
-  // otherwise it walks the full library as before.
-  const activePool = useMemo(() => {
-    if (!lockedCategory) return allQuotes;
-    const filtered = allQuotes.filter(q => q.cat === lockedCategory);
-    return filtered.length ? filtered : allQuotes;
-  }, [allQuotes, lockedCategory]);
-
-  const baseIndex = lockedCategory
-    ? dayOfYear(new Date()) % activePool.length
-    : todayIndex;
-  const activeIndex = (baseIndex + browseOffset + activePool.length * 1000) % activePool.length;
-  const quote = activePool[activeIndex];
-
-  const toggleLockCategory = (cat) => {
-    setBrowseOffset(0);
-    setLockedCategory(prev => prev === cat ? null : cat);
-  };
-
-  const toggleSave = (id) => setSavedIds(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]);
-  const setReflection = (id, text) => setReflections(prev => ({ ...prev, [id]: text }));
-  const addCustomQuote = (text, author) => {
-    const id = Date.now();
-    const q = { id, text: text.trim(), author: author.trim() || "You", cat: "Personal" };
-    setCustomQuotes(prev => [...prev, q]);
-    setSavedIds(prev => [...prev, id]);
-    return id;
-  };
-  const removeCustomQuote = (id) => {
-    setCustomQuotes(prev => prev.filter(q => q.id !== id));
-    setSavedIds(prev => prev.filter(x => x !== id));
-  };
-
-  const dateLabel = new Date().toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric" });
-
-  return (
-    <div className="app">
-      <div className="header">
-        <div className="header-title">Anchor</div>
-        <div className="header-rule"></div>
-        {tab === "today" && <div className="header-date">{dateLabel}</div>}
-      </div>
-      <div className="content">
-        {tab === "today" && (
-          <TodayView
-            quote={quote} isToday={browseOffset === 0} streak={streak}
-            lockedCategory={lockedCategory} onToggleLock={toggleLockCategory}
-            onPrev={() => setBrowseOffset(o => o - 1)} onNext={() => setBrowseOffset(o => o + 1)}
-            onReturnToToday={() => setBrowseOffset(0)}
-            isSaved={savedIds.includes(quote.id)} onToggleSave={() => toggleSave(quote.id)}
-            reflection={reflections[quote.id] || ""} onReflect={(t) => setReflection(quote.id, t)}
-          />
-        )}
-        {tab === "saved" && (
-          <SavedView
-            allQuotes={allQuotes} savedIds={savedIds} onRemove={toggleSave} reflections={reflections}
-            onReflect={setReflection} customIds={customQuotes.map(q => q.id)}
-            onAddCustom={addCustomQuote} onRemoveCustom={removeCustomQuote}
-          />
-        )}
-        {tab === "settings" && (
-          <SettingsView visitDays={visitDays} savedCount={savedIds.length} libSize={allQuotes.length} streak={streak} onReset={() => {
-            if (confirm("Clear all saved quotes, custom quotes, and reflections? This can't be undone.")) {
-              setSavedIds([]); setReflections({}); setCustomQuotes([]);
-            }
-          }} />
-        )}
-      </div>
-      <div className="bottom-nav">
-        <button className={"nav-btn " + (tab==="today"?"active":"")} onClick={() => setTab("today")}>
-          <span className="nav-icon">◈</span>Today
-        </button>
-        <button className={"nav-btn " + (tab==="saved"?"active":"")} onClick={() => setTab("saved")}>
-          <span className="nav-icon">☖</span>Saved
-        </button>
-        <button className={"nav-btn " + (tab==="settings"?"active":"")} onClick={() => setTab("settings")}>
-          <span className="nav-icon">⚙</span>Settings
-        </button>
-      </div>
-    </div>
-  );
-}
-
-function TodayView({ quote, isToday, streak, lockedCategory, onToggleLock, onPrev, onNext, onReturnToToday, isSaved, onToggleSave, reflection, onReflect }) {
+function TodayView(props) {
+  const quote = props.quote, isToday = props.isToday, streak = props.streak,
+    lockedCategory = props.lockedCategory, onToggleLock = props.onToggleLock,
+    onPrev = props.onPrev, onNext = props.onNext, onReturnToToday = props.onReturnToToday,
+    isSaved = props.isSaved, onToggleSave = props.onToggleSave,
+    reflection = props.reflection, onReflect = props.onReflect;
   const [showReflect, setShowReflect] = useState(false);
-  useEffect(() => { setShowReflect(false); }, [quote.id]);
+  useEffect(function () { setShowReflect(false); }, [quote.id]);
   const swipe = useSwipeHandlers(onNext, onPrev);
   const locked = lockedCategory === quote.cat;
 
-  return (
-    <div>
-      <div className="tablet-wrap" {...swipe}>
-        <div className="tablet" key={quote.id}>
-          <div className="tablet-corner-tl"></div>
-          <EngravedBorder streak={streak} />
-          <div className={"tablet-cat" + (locked ? " locked" : "")} onClick={() => onToggleLock(quote.cat)} title={locked ? "Tap to unlock" : "Tap to browse only " + quote.cat}>
-            {locked ? "🔒 " : ""}{quote.cat}
-          </div>
-          <div className="tablet-quote-mark">&ldquo;</div>
-          <div className="tablet-quote">{quote.text}</div>
-          <div className="tablet-footer">
-            <div className="tablet-rule"></div>
-            <div className="tablet-author">{quote.author}</div>
-          </div>
-        </div>
-      </div>
-
-      <div className="action-row">
-        <div className="action-btn" onClick={onPrev} title="Previous">←</div>
-        <div className={"action-btn big" + (isSaved ? " active" : "")} onClick={onToggleSave} title="Save">{isSaved ? "★" : "☆"}</div>
-        <div className="action-btn" onClick={() => setShowReflect(s => !s)} title="Reflect">✎</div>
-        <div className="action-btn" onClick={onNext} title="Next">→</div>
-      </div>
-
-      {lockedCategory && (
-        <div className="lock-banner">
-          <span>Browsing only: {lockedCategory}</span>
-          <span className="clear" onClick={() => onToggleLock(lockedCategory)}>clear</span>
-        </div>
-      )}
-
-      {!isToday && !lockedCategory && (
-        <div className="browse-row" style={{ marginTop: 14 }}>
-          <span className="browse-label" onClick={onReturnToToday} style={{ cursor: "pointer", color: "var(--bronze)" }}>↺ Return to today's anchor</span>
-        </div>
-      )}
-
-      {showReflect && (
-        <div className="reflect-wrap">
-          <div className="reflect-label">Your reflection</div>
-          <textarea
-            className="reflect-box"
-            placeholder="What does this mean for you today?"
-            value={reflection}
-            onChange={(e) => onReflect(e.target.value)}
-          />
-        </div>
-      )}
-    </div>
+  return e("div", null,
+    e("div", Object.assign({ className: "tablet-wrap" }, swipe),
+      e("div", { className: "tablet", key: quote.id },
+        e("div", { className: "tablet-corner-tl" }),
+        e(EngravedBorder, { streak: streak }),
+        e("div", {
+          className: "tablet-cat" + (locked ? " locked" : ""),
+          onClick: function () { onToggleLock(quote.cat); },
+          title: locked ? "Tap to unlock" : "Tap to browse only " + quote.cat
+        }, locked ? "\uD83D\uDD12 " : "", quote.cat),
+        e("div", { className: "tablet-quote-mark" }, "\u201C"),
+        e("div", { className: "tablet-quote" }, quote.text),
+        e("div", { className: "tablet-footer" },
+          e("div", { className: "tablet-rule" }),
+          e("div", { className: "tablet-author" }, quote.author)
+        )
+      )
+    ),
+    e("div", { className: "action-row" },
+      e("div", { className: "action-btn", onClick: onPrev, title: "Previous" }, "\u2190"),
+      e("div", { className: "action-btn big" + (isSaved ? " active" : ""), onClick: onToggleSave, title: "Save" }, isSaved ? "\u2605" : "\u2606"),
+      e("div", { className: "action-btn", onClick: function () { setShowReflect(function (s) { return !s; }); }, title: "Reflect" }, "\u270E"),
+      e("div", { className: "action-btn", onClick: onNext, title: "Next" }, "\u2192")
+    ),
+    lockedCategory ? e("div", { className: "lock-banner" },
+      e("span", null, "Browsing only: " + lockedCategory),
+      e("span", { className: "clear", onClick: function () { onToggleLock(lockedCategory); } }, "clear")
+    ) : null,
+    (!isToday && !lockedCategory) ? e("div", { className: "browse-row", style: { marginTop: 14 } },
+      e("span", { className: "browse-label", onClick: onReturnToToday, style: { cursor: "pointer", color: "var(--bronze)" } }, "\u21BA Return to today's anchor")
+    ) : null,
+    showReflect ? e("div", { className: "reflect-wrap" },
+      e("div", { className: "reflect-label" }, "Your reflection"),
+      e("textarea", {
+        className: "reflect-box",
+        placeholder: "What does this mean for you today?",
+        value: reflection,
+        onChange: function (ev) { onReflect(ev.target.value); }
+      })
+    ) : null
   );
 }
 
-function SavedView({ allQuotes, savedIds, onRemove, reflections, onReflect, customIds, onAddCustom, onRemoveCustom }) {
-  const [mode, setMode] = useState("list"); // "list" | "cycle"
+function SavedView(props) {
+  const allQuotes = props.allQuotes, savedIds = props.savedIds, onRemove = props.onRemove,
+    reflections = props.reflections, onReflect = props.onReflect, customIds = props.customIds,
+    onAddCustom = props.onAddCustom, onRemoveCustom = props.onRemoveCustom;
+  const [mode, setMode] = useState("list");
   const [showAdd, setShowAdd] = useState(false);
   const [draftText, setDraftText] = useState("");
   const [draftAuthor, setDraftAuthor] = useState("");
   const [cycleIndex, setCycleIndex] = useState(0);
-  const cycleSwipe = useSwipeHandlers(() => setCycleIndex(i => i + 1), () => setCycleIndex(i => i - 1));
+  const cycleSwipe = useSwipeHandlers(function () { setCycleIndex(function (i) { return i + 1; }); }, function () { setCycleIndex(function (i) { return i - 1; }); });
 
-  const items = allQuotes.filter(q => savedIds.includes(q.id));
+  const items = allQuotes.filter(function (q) { return savedIds.includes(q.id); });
 
-  const submitCustom = () => {
+  const submitCustom = function () {
     if (!draftText.trim()) return;
     onAddCustom(draftText, draftAuthor);
     setDraftText(""); setDraftAuthor(""); setShowAdd(false);
   };
 
   if (items.length === 0 && !showAdd) {
-    return (
-      <div>
-        <div className="empty">
-          <div className="empty-glyph">☖</div>
-          <div className="empty-text">Nothing kept yet.<br/>Save a quote from Today, or add one of your own.</div>
-        </div>
-        <button className="btn-outline" style={{ borderColor: "var(--line-gold)", color: "var(--bronze-bright)" }} onClick={() => setShowAdd(true)}>+ Add your own quote</button>
-      </div>
+    return e("div", null,
+      e("div", { className: "empty" },
+        e("div", { className: "empty-glyph" }, "\u2616"),
+        e("div", { className: "empty-text" }, "Nothing kept yet.", e("br"), "Save a quote from Today, or add one of your own.")
+      ),
+      e("button", { className: "btn-outline", style: { borderColor: "var(--line-gold)", color: "var(--bronze-bright)" }, onClick: function () { setShowAdd(true); } }, "+ Add your own quote")
     );
   }
 
   const safeIndex = ((cycleIndex % items.length) + items.length) % items.length;
   const cycleQuote = items[safeIndex];
 
-  return (
-    <div>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
-        <div className="section-title" style={{ marginBottom: 0 }}>{items.length} Kept</div>
-        <div className="chip-row" style={{ marginBottom: 0 }}>
-          <div className={"chip" + (mode === "list" ? " active" : "")} onClick={() => setMode("list")}>List</div>
-          <div className={"chip" + (mode === "cycle" ? " active" : "")} onClick={() => { setMode("cycle"); setCycleIndex(0); }}>Cycle</div>
-        </div>
-      </div>
-
-      {mode === "cycle" && items.length > 0 && (
-        <div>
-          <div className="tablet-wrap" {...cycleSwipe}>
-            <div className="tablet" key={cycleQuote.id}>
-              <div className="tablet-cat">{cycleQuote.cat}</div>
-              <div className="tablet-quote-mark">&ldquo;</div>
-              <div className="tablet-quote">{cycleQuote.text}</div>
-              <div className="tablet-footer">
-                <div className="tablet-rule"></div>
-                <div className="tablet-author">{cycleQuote.author}</div>
-              </div>
-            </div>
-          </div>
-          <div className="action-row">
-            <div className="action-btn" onClick={() => setCycleIndex(i => i - 1)}>←</div>
-            <div className="action-btn active" onClick={() => onRemove(cycleQuote.id)} title="Remove from saved">★</div>
-            <div className="action-btn" onClick={() => setCycleIndex(i => i + 1)}>→</div>
-          </div>
-          <div className="reflect-wrap">
-            <div className="reflect-label">Your reflection</div>
-            <textarea
-              className="reflect-box" placeholder="What does this mean for you today?"
-              value={reflections[cycleQuote.id] || ""} onChange={(e) => onReflect(cycleQuote.id, e.target.value)}
-            />
-          </div>
-        </div>
-      )}
-
-      {mode === "list" && items.map(q => (
-        <div className="saved-item" key={q.id}>
-          <div className="saved-quote">&ldquo;{q.text}&rdquo;</div>
-          <div className="saved-meta">
-            <span className="saved-author">{q.author} · {q.cat}</span>
-            <button className="saved-remove" onClick={() => customIds.includes(q.id) ? onRemoveCustom(q.id) : onRemove(q.id)}>
-              {customIds.includes(q.id) ? "Delete" : "Remove"}
-            </button>
-          </div>
-          {reflections[q.id] && (
-            <div style={{ marginTop: 10, fontSize: 12.5, color: "var(--ivory-dim)", lineHeight: 1.6, fontStyle: "italic" }}>
-              — {reflections[q.id]}
-            </div>
-          )}
-        </div>
-      ))}
-
-      {mode === "list" && (
-        showAdd ? (
-          <div className="settings-card" style={{ marginTop: 14 }}>
-            <div className="reflect-label">Your quote</div>
-            <textarea className="reflect-box" style={{ minHeight: 70, marginBottom: 12 }} placeholder="Type the quote or idea..." value={draftText} onChange={(e) => setDraftText(e.target.value)} />
-            <div className="reflect-label">Author (optional)</div>
-            <input className="reflect-box" style={{ minHeight: 0, padding: "12px 14px" }} placeholder="e.g. You, or who said it" value={draftAuthor} onChange={(e) => setDraftAuthor(e.target.value)} />
-            <div style={{ display: "flex", gap: 10, marginTop: 14 }}>
-              <button className="btn-outline" style={{ borderColor: "var(--line)", color: "var(--ivory-dim)" }} onClick={() => { setShowAdd(false); setDraftText(""); setDraftAuthor(""); }}>Cancel</button>
-              <button className="btn-outline" style={{ borderColor: "var(--line-gold)", color: "var(--bronze-bright)" }} onClick={submitCustom}>Save quote</button>
-            </div>
-          </div>
-        ) : (
-          <button className="btn-outline" style={{ borderColor: "var(--line-gold)", color: "var(--bronze-bright)", marginTop: 6 }} onClick={() => setShowAdd(true)}>+ Add your own quote</button>
+  return e("div", null,
+    e("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 } },
+      e("div", { className: "section-title", style: { marginBottom: 0 } }, items.length + " Kept"),
+      e("div", { className: "chip-row", style: { marginBottom: 0 } },
+        e("div", { className: "chip" + (mode === "list" ? " active" : ""), onClick: function () { setMode("list"); } }, "List"),
+        e("div", { className: "chip" + (mode === "cycle" ? " active" : ""), onClick: function () { setMode("cycle"); setCycleIndex(0); } }, "Cycle")
+      )
+    ),
+    (mode === "cycle" && items.length > 0) ? e("div", null,
+      e("div", Object.assign({ className: "tablet-wrap" }, cycleSwipe),
+        e("div", { className: "tablet", key: cycleQuote.id },
+          e("div", { className: "tablet-cat" }, cycleQuote.cat),
+          e("div", { className: "tablet-quote-mark" }, "\u201C"),
+          e("div", { className: "tablet-quote" }, cycleQuote.text),
+          e("div", { className: "tablet-footer" },
+            e("div", { className: "tablet-rule" }),
+            e("div", { className: "tablet-author" }, cycleQuote.author)
+          )
         )
-      )}
-    </div>
+      ),
+      e("div", { className: "action-row" },
+        e("div", { className: "action-btn", onClick: function () { setCycleIndex(function (i) { return i - 1; }); } }, "\u2190"),
+        e("div", { className: "action-btn active", onClick: function () { onRemove(cycleQuote.id); }, title: "Remove from saved" }, "\u2605"),
+        e("div", { className: "action-btn", onClick: function () { setCycleIndex(function (i) { return i + 1; }); } }, "\u2192")
+      ),
+      e("div", { className: "reflect-wrap" },
+        e("div", { className: "reflect-label" }, "Your reflection"),
+        e("textarea", {
+          className: "reflect-box", placeholder: "What does this mean for you today?",
+          value: reflections[cycleQuote.id] || "", onChange: function (ev) { onReflect(cycleQuote.id, ev.target.value); }
+        })
+      )
+    ) : null,
+    (mode === "list") ? items.map(function (q) {
+      return e("div", { className: "saved-item", key: q.id },
+        e("div", { className: "saved-quote" }, "\u201C" + q.text + "\u201D"),
+        e("div", { className: "saved-meta" },
+          e("span", { className: "saved-author" }, q.author + " \u00B7 " + q.cat),
+          e("button", { className: "saved-remove", onClick: function () { customIds.includes(q.id) ? onRemoveCustom(q.id) : onRemove(q.id); } },
+            customIds.includes(q.id) ? "Delete" : "Remove")
+        ),
+        reflections[q.id] ? e("div", { style: { marginTop: 10, fontSize: 12.5, color: "var(--ivory-dim)", lineHeight: 1.6, fontStyle: "italic" } },
+          "\u2014 " + reflections[q.id]) : null
+      );
+    }) : null,
+    (mode === "list") ? (
+      showAdd ? e("div", { className: "settings-card", style: { marginTop: 14 } },
+        e("div", { className: "reflect-label" }, "Your quote"),
+        e("textarea", { className: "reflect-box", style: { minHeight: 70, marginBottom: 12 }, placeholder: "Type the quote or idea...", value: draftText, onChange: function (ev) { setDraftText(ev.target.value); } }),
+        e("div", { className: "reflect-label" }, "Author (optional)"),
+        e("input", { className: "reflect-box", style: { minHeight: 0, padding: "12px 14px" }, placeholder: "e.g. You, or who said it", value: draftAuthor, onChange: function (ev) { setDraftAuthor(ev.target.value); } }),
+        e("div", { style: { display: "flex", gap: 10, marginTop: 14 } },
+          e("button", { className: "btn-outline", style: { borderColor: "var(--line)", color: "var(--ivory-dim)" }, onClick: function () { setShowAdd(false); setDraftText(""); setDraftAuthor(""); } }, "Cancel"),
+          e("button", { className: "btn-outline", style: { borderColor: "var(--line-gold)", color: "var(--bronze-bright)" }, onClick: submitCustom }, "Save quote")
+        )
+      ) : e("button", { className: "btn-outline", style: { borderColor: "var(--line-gold)", color: "var(--bronze-bright)", marginTop: 6 }, onClick: function () { setShowAdd(true); } }, "+ Add your own quote")
+    ) : null
   );
 }
 
-function SettingsView({ visitDays, savedCount, libSize, streak, onReset }) {
-  return (
-    <div>
-      <div className="settings-card">
-        <div className="settings-row"><span className="settings-label">Days returned</span><span className="settings-val">{visitDays.length}</span></div>
-        <div className="settings-row"><span className="settings-label">Current run</span><span className="settings-val">{streak >= STREAK_CAP_DISPLAY ? "Fully engraved" : streak + (streak === 1 ? " day" : " days")}</span></div>
-        <div className="settings-row"><span className="settings-label">Quotes kept</span><span className="settings-val">{savedCount}</span></div>
-        <div className="settings-row"><span className="settings-label">Library size</span><span className="settings-val">{libSize}</span></div>
-      </div>
-      <div className="settings-card">
-        <div style={{ fontSize: 12.5, color: "var(--ivory-dim)", lineHeight: 1.7 }}>
-          Anchor gives you one fixed quote each day — the same one on every device, all day — so it works as a single point of focus rather than something to scroll past. The line etched around the tablet is your quiet record of returning: no counter, no pressure, just a border that slowly fills in. Tap a category tag to browse only within it for a while. Add your own quotes from the Saved tab to cycle through alongside the library.
-        </div>
-      </div>
-      <button className="btn-outline" onClick={onReset}>Clear Saved & Reflections</button>
-    </div>
+function SettingsView(props) {
+  const visitDays = props.visitDays, savedCount = props.savedCount, libSize = props.libSize,
+    streak = props.streak, onReset = props.onReset;
+  return e("div", null,
+    e("div", { className: "settings-card" },
+      e("div", { className: "settings-row" }, e("span", { className: "settings-label" }, "Days returned"), e("span", { className: "settings-val" }, visitDays.length)),
+      e("div", { className: "settings-row" }, e("span", { className: "settings-label" }, "Current run"), e("span", { className: "settings-val" }, streak >= STREAK_CAP_DISPLAY ? "Fully engraved" : (streak + (streak === 1 ? " day" : " days")))),
+      e("div", { className: "settings-row" }, e("span", { className: "settings-label" }, "Quotes kept"), e("span", { className: "settings-val" }, savedCount)),
+      e("div", { className: "settings-row" }, e("span", { className: "settings-label" }, "Library size"), e("span", { className: "settings-val" }, libSize))
+    ),
+    e("div", { className: "settings-card" },
+      e("div", { style: { fontSize: 12.5, color: "var(--ivory-dim)", lineHeight: 1.7 } },
+        "Anchor gives you one fixed quote each day \u2014 the same one on every device, all day \u2014 so it works as a single point of focus rather than something to scroll past. The line etched around the tablet is your quiet record of returning: no counter, no pressure, just a border that slowly fills in. Tap a category tag to browse only within it for a while. Add your own quotes from the Saved tab to cycle through alongside the library."
+      )
+    ),
+    e("button", { className: "btn-outline", onClick: onReset }, "Clear Saved & Reflections")
   );
 }
-const STREAK_CAP_DISPLAY = 45;
 
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+function App() {
+  const [tab, setTab] = useState("today");
+  const [savedIds, setSavedIds] = useState(function () { return loadJSON("anchor_saved", []); });
+  const [reflections, setReflections] = useState(function () { return loadJSON("anchor_reflections", {}); });
+  const [visitDays, setVisitDays] = useState(function () { return loadJSON("anchor_visits", []); });
+  const [customQuotes, setCustomQuotes] = useState(function () { return loadJSON("anchor_custom", []); });
+  const [lockedCategory, setLockedCategory] = useState(null);
+
+  useEffect(function () { localStorage.setItem("anchor_saved", JSON.stringify(savedIds)); }, [savedIds]);
+  useEffect(function () { localStorage.setItem("anchor_reflections", JSON.stringify(reflections)); }, [reflections]);
+  useEffect(function () { localStorage.setItem("anchor_custom", JSON.stringify(customQuotes)); }, [customQuotes]);
+  useEffect(function () {
+    const t = todayStr();
+    if (!visitDays.includes(t)) {
+      const next = visitDays.concat([t]);
+      setVisitDays(next);
+      localStorage.setItem("anchor_visits", JSON.stringify(next));
+    }
+  }, []);
+
+  const allQuotes = useMemo(function () { return QUOTES.concat(customQuotes); }, [customQuotes]);
+  const streak = useMemo(function () { return computeStreak(visitDays); }, [visitDays]);
+
+  const todayIndex = dayOfYear(new Date()) % allQuotes.length;
+  const [browseOffset, setBrowseOffset] = useState(0);
+
+  const activePool = useMemo(function () {
+    if (!lockedCategory) return allQuotes;
+    const filtered = allQuotes.filter(function (q) { return q.cat === lockedCategory; });
+    return filtered.length ? filtered : allQuotes;
+  }, [allQuotes, lockedCategory]);
+
+  const baseIndex = lockedCategory ? (dayOfYear(new Date()) % activePool.length) : todayIndex;
+  const activeIndex = (baseIndex + browseOffset + activePool.length * 1000) % activePool.length;
+  const quote = activePool[activeIndex];
+
+  const toggleLockCategory = function (cat) {
+    setBrowseOffset(0);
+    setLockedCategory(function (prev) { return prev === cat ? null : cat; });
+  };
+
+  const toggleSave = function (id) { setSavedIds(function (prev) { return prev.includes(id) ? prev.filter(function (x) { return x !== id; }) : prev.concat([id]); }); };
+  const setReflection = function (id, text) { setReflections(function (prev) { const next = Object.assign({}, prev); next[id] = text; return next; }); };
+  const addCustomQuote = function (text, author) {
+    const id = Date.now();
+    const q = { id: id, text: text.trim(), author: author.trim() || "You", cat: "Personal" };
+    setCustomQuotes(function (prev) { return prev.concat([q]); });
+    setSavedIds(function (prev) { return prev.concat([id]); });
+    return id;
+  };
+  const removeCustomQuote = function (id) {
+    setCustomQuotes(function (prev) { return prev.filter(function (q) { return q.id !== id; }); });
+    setSavedIds(function (prev) { return prev.filter(function (x) { return x !== id; }); });
+  };
+
+  const dateLabel = new Date().toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric" });
+
+  return e("div", { className: "app" },
+    e("div", { className: "header" },
+      e("div", { className: "header-title" }, "Anchor"),
+      e("div", { className: "header-rule" }),
+      tab === "today" ? e("div", { className: "header-date" }, dateLabel) : null
+    ),
+    e("div", { className: "content" },
+      tab === "today" ? e(TodayView, {
+        quote: quote, isToday: browseOffset === 0, streak: streak,
+        lockedCategory: lockedCategory, onToggleLock: toggleLockCategory,
+        onPrev: function () { setBrowseOffset(function (o) { return o - 1; }); },
+        onNext: function () { setBrowseOffset(function (o) { return o + 1; }); },
+        onReturnToToday: function () { setBrowseOffset(0); },
+        isSaved: savedIds.includes(quote.id), onToggleSave: function () { toggleSave(quote.id); },
+        reflection: reflections[quote.id] || "", onReflect: function (t) { setReflection(quote.id, t); }
+      }) : null,
+      tab === "saved" ? e(SavedView, {
+        allQuotes: allQuotes, savedIds: savedIds, onRemove: toggleSave, reflections: reflections,
+        onReflect: setReflection, customIds: customQuotes.map(function (q) { return q.id; }),
+        onAddCustom: addCustomQuote, onRemoveCustom: removeCustomQuote
+      }) : null,
+      tab === "settings" ? e(SettingsView, {
+        visitDays: visitDays, savedCount: savedIds.length, libSize: allQuotes.length, streak: streak,
+        onReset: function () {
+          if (confirm("Clear all saved quotes, custom quotes, and reflections? This can't be undone.")) {
+            setSavedIds([]); setReflections({}); setCustomQuotes([]);
+          }
+        }
+      }) : null
+    ),
+    e("div", { className: "bottom-nav" },
+      e("button", { className: "nav-btn " + (tab === "today" ? "active" : ""), onClick: function () { setTab("today"); } },
+        e("span", { className: "nav-icon" }, "\u25C8"), "Today"),
+      e("button", { className: "nav-btn " + (tab === "saved" ? "active" : ""), onClick: function () { setTab("saved"); } },
+        e("span", { className: "nav-icon" }, "\u2616"), "Saved"),
+      e("button", { className: "nav-btn " + (tab === "settings" ? "active" : ""), onClick: function () { setTab("settings"); } },
+        e("span", { className: "nav-icon" }, "\u2699"), "Settings")
+    )
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(e(App));
 </script>
 </body>
 </html>
